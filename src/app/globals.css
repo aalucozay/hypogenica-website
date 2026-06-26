@@ -31,6 +31,12 @@ body {
   color: var(--color-caco3-white);
 }
 
+/* Offset anchored sections so the fixed navbar doesn't cover their heading
+   when navigation links smooth-scroll to them. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* ---------------------------------------------------------------------------
    Marquee — two identical copies in the track; translate -50% loops seamlessly
    --------------------------------------------------------------------------- */

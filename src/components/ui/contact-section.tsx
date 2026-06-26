@@ -5,13 +5,13 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-hypogenica-green py-24 md:py-36">
+    <section id="contact" className="bg-hypogenica-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
               <div className="text-future-teal md:sticky md:top-32">
-                <Eyebrow>Get In Touch</Eyebrow>
+                <Eyebrow>Contact</Eyebrow>
               </div>
             </Reveal>
           </div>
@@ -20,7 +20,7 @@ export function ContactSection() {
             {/* Info */}
             <div>
               <Reveal>
-                <h2 className="text-4xl font-medium tracking-[-0.02em] text-ralf-yellow sm:text-6xl">
+                <h2 className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl">
                   Get In Touch
                 </h2>
               </Reveal>

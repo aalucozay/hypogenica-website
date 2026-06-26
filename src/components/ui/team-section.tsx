@@ -13,7 +13,7 @@ const TEAM = [
 
 export function TeamSection() {
   return (
-    <section id="about" className="bg-hypogenica-green py-24 md:py-36">
+    <section id="about" className="bg-hypogenica-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
@@ -32,10 +32,9 @@ export function TeamSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-cloud-gray">
-                Our team is made up of experts in cave, microbiology, and
-                materials sciences from renowned institutions across the country,
-                including the University of Alabama and Sherwin-Williams.
+              <p className="mt-8 max-w-xl text-lg font-light leading-relaxed text-caco3-white/80">
+                Experts in cave, microbiology, and materials sciences — drawn
+                from the University of Alabama and Sherwin-Williams.
               </p>
             </Reveal>
           </div>
@@ -45,7 +44,7 @@ export function TeamSection() {
           {TEAM.map((member, i) => (
             <Reveal key={member.name} delay={i * 100}>
               <div className="group">
-                <div className="flex aspect-[4/5] w-full items-end overflow-hidden rounded-2xl border border-cloud-gray/15 bg-cloud-gray p-5 transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
+                <div className="flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm border border-cloud-gray/20 bg-cloud-gray p-5 transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
                   <span className="font-mono text-xs uppercase tracking-[0.14em] text-hypogenica-green/40">
                     Team Member
                   </span>

@@ -35,7 +35,7 @@ const [featured, ...rest] = ARTICLES;
 
 export function NewsSection() {
   return (
-    <section id="news" className="bg-hypogenica-green py-24 md:py-36">
+    <section id="news" className="bg-hypogenica-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         {/* Heading row */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -57,9 +57,9 @@ export function NewsSection() {
             href={featured.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-16 grid gap-8 rounded-3xl border border-cloud-gray/10 bg-deep-green p-6 transition-colors duration-300 hover:border-cloud-gray/25 md:grid-cols-2 md:p-8"
+            className="group mt-16 grid gap-8 rounded-lg border border-cloud-gray/10 bg-deep-green p-6 transition-colors duration-300 hover:border-cloud-gray/25 md:grid-cols-2 md:p-8"
           >
-            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-2xl border border-cloud-gray/15 bg-cloud-gray">
+            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-sm border border-cloud-gray/20 bg-cloud-gray">
               <span className="font-mono text-xs uppercase tracking-[0.14em] text-hypogenica-green/40">
                 Image Placeholder
               </span>
@@ -76,7 +76,7 @@ export function NewsSection() {
               <h3 className="mt-6 text-3xl font-medium leading-tight tracking-[-0.01em] text-caco3-white md:text-4xl">
                 {featured.title}
               </h3>
-              <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-cloud-gray">
+              <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-caco3-white/80">
                 {featured.snippet}
               </p>
               <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.14em] text-future-teal">
@@ -99,7 +99,7 @@ export function NewsSection() {
                   href={article.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group flex h-full flex-col rounded-3xl p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${
+                  className={`group flex h-full flex-col rounded-lg p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${
                     teal
                       ? "bg-future-teal text-hypogenica-green"
                       : "border border-cloud-gray/10 bg-deep-green text-caco3-white"
@@ -118,7 +118,7 @@ export function NewsSection() {
                   </h3>
                   <p
                     className={`mt-4 flex-1 text-base font-light leading-relaxed ${
-                      teal ? "text-hypogenica-green/75" : "text-cloud-gray"
+                      teal ? "text-hypogenica-green/75" : "text-caco3-white/80"
                     }`}
                   >
                     {article.snippet}

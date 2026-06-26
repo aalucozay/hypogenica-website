@@ -1,40 +1,37 @@
-"use client";
+const PHRASES = [
+  "Carbon-Negative CaCO3",
+  "Cleaner",
+  "Cheaper",
+  "Efficient",
+  "Cave Science",
+];
 
-import { HorizontalScrollText } from "@/components/ui/horizontal-scroll-text";
-
-const PHRASES = ["Carbon-Negative CaCO3", "Cleaner", "Cheaper", "Efficient"];
-
-function Band({ accent }: { accent?: boolean }) {
-  // Repeat enough to overfill the viewport at large type sizes.
-  const items = Array.from({ length: 3 }).flatMap(() => PHRASES);
+/**
+ * Understated single-line ticker. Two identical halves sit side by side and the
+ * track translates -50%, so the loop is seamless. Small, uppercase, wide
+ * tracking and low opacity — a quiet design accent, not a content block.
+ */
+function Half() {
   return (
-    <span className="inline-flex items-center">
-      {items.map((phrase, i) => (
-        <span key={i} className="inline-flex items-center">
-          <span
-            className={`px-6 text-6xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl ${
-              accent ? "text-future-teal" : "text-caco3-white"
-            }`}
-          >
+    <div className="flex shrink-0 items-center">
+      {PHRASES.map((phrase) => (
+        <div key={phrase} className="flex items-center">
+          <span className="px-6 font-mono text-xs uppercase tracking-[0.25em] sm:text-sm">
             {phrase}
           </span>
-          <span className="text-future-teal/50">·</span>
-        </span>
+          <span aria-hidden="true">·</span>
+        </div>
       ))}
-    </span>
+    </div>
   );
 }
 
 export function Marquee() {
   return (
-    <div className="relative overflow-hidden border-y border-cloud-gray/10 bg-deep-green py-16 md:py-24">
-      <div className="flex flex-col gap-3">
-        <HorizontalScrollText from={4} to={-26}>
-          <Band />
-        </HorizontalScrollText>
-        <HorizontalScrollText from={-26} to={6}>
-          <Band accent />
-        </HorizontalScrollText>
+    <div className="overflow-hidden border-y border-cloud-gray/10 bg-hypogenica-green py-8">
+      <div className="flex w-max animate-marquee text-caco3-white/55">
+        <Half />
+        <Half />
       </div>
     </div>
   );

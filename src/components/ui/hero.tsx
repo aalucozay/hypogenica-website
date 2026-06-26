@@ -8,9 +8,9 @@ export function Hero() {
     <section className="relative flex min-h-screen flex-col overflow-hidden bg-hypogenica-green">
       {/* Flowing organic background */}
       <div className="organic-bg">
-        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-future-teal/25" />
+        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-future-teal/20" />
         <span className="blob animate-blob-b right-[-15%] top-[10%] size-[50vw] bg-[#0e3a2a]/80" />
-        <span className="blob animate-blob-c bottom-[-20%] left-[20%] size-[45vw] bg-ralf-yellow/10" />
+        <span className="blob animate-blob-c bottom-[-20%] left-[20%] size-[45vw] bg-future-teal/10" />
       </div>
 
       <div className="relative mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-12 pt-36 md:px-12 md:pb-16 md:pt-44">
@@ -24,7 +24,7 @@ export function Hero() {
           </div>
 
           <h1
-            className="animate-fade-up mt-8 max-w-[16ch] text-5xl font-medium leading-[0.98] tracking-[-0.03em] text-ralf-yellow sm:text-7xl lg:text-8xl xl:text-[8.5rem]"
+            className="animate-fade-up mt-8 max-w-[15ch] text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-caco3-white sm:text-8xl lg:text-9xl xl:text-[10.5rem]"
             style={{ animationDelay: "180ms" }}
           >
             Using biotech for a better future.
@@ -37,10 +37,10 @@ export function Hero() {
             className="animate-fade-up max-w-xl"
             style={{ animationDelay: "340ms" }}
           >
-            <p className="text-base font-light leading-relaxed text-caco3-white sm:text-lg">
-              Current processes for making calcium carbonate are costly,
-              inefficient, and harmful for the environment. We&apos;ve patented a
-              way to get pure CaCO3 — cleaner, cheaper, and more efficient.
+            <p className="text-base font-light leading-relaxed text-caco3-white/80 sm:text-lg">
+              We&apos;ve patented a bacteria-driven way to make pure calcium
+              carbonate — cleaner, cheaper, and more efficient than anything
+              before it.
             </p>
             <p className="mt-4 font-mono text-sm uppercase tracking-[0.14em] text-future-teal">
               How? Using cave science.

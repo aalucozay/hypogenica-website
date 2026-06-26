@@ -14,7 +14,7 @@ export function ImpactSection() {
   return (
     <section
       id="impact"
-      className="bg-caco3-white py-24 text-hypogenica-green md:py-36"
+      className="bg-caco3-white py-32 text-hypogenica-green md:py-48"
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">

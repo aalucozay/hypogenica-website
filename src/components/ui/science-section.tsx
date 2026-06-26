@@ -10,7 +10,7 @@ const PILLARS = [
     index: "01",
     title: "Cave Science",
     description:
-      "We harness microbial ecosystems from Alabama's vast cave systems to control biomineralization with unmatched precision.",
+      "Microbial ecosystems from Alabama's caves, directing biomineralization with precision.",
     theme: "bg-future-teal text-hypogenica-green",
     sub: "text-hypogenica-green/70",
   },
@@ -18,15 +18,15 @@ const PILLARS = [
     index: "02",
     title: "Biomineralization",
     description:
-      "Our patented, bacteria-driven process produces high-purity calcium carbonate from atmospheric CO2.",
+      "A patented, bacteria-driven process that pulls pure CaCO3 from atmospheric CO2.",
     theme: "bg-deep-green text-caco3-white border border-cloud-gray/10",
-    sub: "text-cloud-gray",
+    sub: "text-caco3-white/70",
   },
   {
     index: "03",
     title: "Carbon Capture",
     description:
-      "Every batch sequesters carbon, powering a carbon-negative supply of industrial-grade calcite.",
+      "Every batch sequesters carbon — a carbon-negative supply of industrial calcite.",
     theme: "bg-cloud-gray text-hypogenica-green",
     sub: "text-hypogenica-green/70",
   },
@@ -34,7 +34,7 @@ const PILLARS = [
 
 export function ScienceSection() {
   return (
-    <section className="relative bg-hypogenica-green py-24 md:py-36">
+    <section className="relative bg-hypogenica-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           {/* Left rail eyebrow */}
@@ -55,10 +55,9 @@ export function ScienceSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-cloud-gray">
-                Our platform unites microbiology, geology, and materials science
-                to produce calcium carbonate the way nature does — only faster,
-                cleaner, and at industrial scale.
+              <p className="mt-8 max-w-xl text-lg font-light leading-relaxed text-caco3-white/80">
+                Microbiology, geology, and materials science — producing calcium
+                carbonate the way nature does, at industrial scale.
               </p>
             </Reveal>
 
@@ -70,17 +69,20 @@ export function ScienceSection() {
           </div>
         </div>
 
-        {/* Pillar cards */}
-        <div className="mt-20 grid gap-5 md:grid-cols-3">
+        {/* Pillar cards — oversized index numbers bleed into each panel */}
+        <div className="mt-24 grid gap-5 md:grid-cols-3">
           {PILLARS.map((pillar, i) => (
             <Reveal key={pillar.index} delay={i * 120}>
               <article
-                className={`group flex h-full min-h-[320px] flex-col justify-between rounded-3xl p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${pillar.theme}`}
+                className={`group relative flex h-full min-h-[360px] flex-col justify-end overflow-hidden rounded-lg p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${pillar.theme}`}
               >
-                <span className="font-mono text-sm tracking-[0.14em] opacity-60">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-5 -top-12 select-none text-[11rem] font-bold leading-none tracking-tighter opacity-[0.07]"
+                >
                   {pillar.index}
                 </span>
-                <div>
+                <div className="relative">
                   <h3 className="text-2xl font-medium md:text-3xl">
                     {pillar.title}
                   </h3>

@@ -33,14 +33,14 @@ export function Navbar() {
           }`}
         >
           <Image
-            src="/logo.png"
+            src="/logo-icon.png"
             alt="Hypogenica logo"
-            width={398}
-            height={124}
+            width={73}
+            height={73}
             priority
-            className="h-7 w-auto"
+            className="h-7 w-7"
           />
-          <span className="text-lg font-bold lowercase tracking-tight text-caco3-white">
+          <span className="text-lg font-medium lowercase tracking-tight text-caco3-white">
             hypogenica
           </span>
         </a>
