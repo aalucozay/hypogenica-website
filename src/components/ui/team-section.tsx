@@ -1,15 +1,32 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 
-const TEAM = [
-  { name: "Reilly Blackwell", role: "Founder & CEO" },
-  { name: "Dr. Hazel Barton", role: "CTO · Cave Microbiologist" },
-  { name: "Materials Science", role: "Sherwin-Williams alumni" },
-  { name: "Microbiology", role: "University of Alabama" },
+interface Member {
+  name: string;
+  role: string;
+  initials: string;
+  /**
+   * Official headshot. Drop a licensed image at the given path and it renders
+   * automatically. Leave undefined to show the monogram avatar.
+   * e.g. photo: "/images/team/hazel-barton.jpg"
+   */
+  photo?: string;
+}
+
+const TEAM: Member[] = [
+  { name: "Reilly Blackwell", role: "Founder & CEO", initials: "RB" },
+  {
+    name: "Dr. Hazel Barton",
+    role: "CTO · Cave Microbiologist",
+    initials: "HB",
+  },
+  { name: "Materials Science", role: "Sherwin-Williams alumni", initials: "MS" },
+  { name: "Microbiology", role: "University of Alabama", initials: "MB" },
 ];
 
 export function TeamSection() {
@@ -47,10 +64,22 @@ export function TeamSection() {
           {TEAM.map((member, i) => (
             <Reveal key={member.name} delay={i * 100} scale>
               <div className="group">
-                <div className="flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm border border-hypogenica-green/10 bg-cloud-gray p-5 transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
-                  <span className="text-sm text-hypogenica-green/40">
-                    Team member
-                  </span>
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-caco3-white/10 bg-deep-green transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
+                  {member.photo ? (
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      sizes="(min-width: 768px) 22vw, 50vw"
+                      className="object-cover object-center transition-transform duration-[1200ms] ease-out-expo group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="text-5xl font-light tracking-tight text-caco3-white/25">
+                        {member.initials}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <h3 className="mt-4 text-lg font-medium text-caco3-white">
                   {member.name}
