@@ -6,11 +6,13 @@ import { ArrowButton } from "@/components/ui/arrow-button";
 export function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden bg-hypogenica-green">
-      {/* Flowing organic background — soft tonal greens with one faint teal note */}
+      {/* Living aurora background — soft tonal greens drifting and slowly
+          shifting toward teal over time. */}
       <div className="organic-bg">
-        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-moss-green/70" />
-        <span className="blob animate-blob-b right-[-15%] top-[10%] size-[50vw] bg-deep-green/80" />
-        <span className="blob animate-blob-c bottom-[-20%] left-[20%] size-[45vw] bg-future-teal/8" />
+        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-moss-green/80" />
+        <span className="blob animate-blob-b right-[-15%] top-[8%] size-[52vw] bg-deep-green/80" />
+        <span className="blob animate-blob-d right-[5%] top-[35%] size-[40vw] bg-future-teal/15" />
+        <span className="blob animate-blob-c bottom-[-20%] left-[15%] size-[48vw] bg-future-teal/10" />
       </div>
 
       <div className="relative mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-12 pt-36 md:px-12 md:pb-16 md:pt-44">

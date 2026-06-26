@@ -5,8 +5,17 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-moss-green py-32 md:py-48">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-moss-green py-32 md:py-48"
+    >
+      {/* Living aurora background */}
+      <div className="organic-bg">
+        <span className="blob animate-blob-b left-[-10%] top-[10%] size-[45vw] bg-deep-green/70" />
+        <span className="blob animate-blob-d right-[-8%] bottom-[-15%] size-[42vw] bg-future-teal/10" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
