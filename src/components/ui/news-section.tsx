@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { Parallax } from "@/components/ui/parallax";
 import { ArrowButton } from "@/components/ui/arrow-button";
 
 const ARTICLES = [
@@ -51,9 +53,11 @@ export function NewsSection() {
         {/* Heading row */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <Reveal>
-            <h2 className="text-5xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl">
-              Newsroom
-            </h2>
+            <Parallax>
+              <h2 className="text-5xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl">
+                Newsroom
+              </h2>
+            </Parallax>
           </Reveal>
           <Reveal delay={100}>
             <ArrowButton href={featured.href} external>
@@ -63,17 +67,21 @@ export function NewsSection() {
         </div>
 
         {/* Featured article */}
-        <Reveal delay={80}>
+        <Reveal delay={80} scale>
           <a
             href={featured.href}
             target="_blank"
             rel="noopener noreferrer"
             className="group mt-16 grid gap-8 rounded-lg bg-deep-green p-6 transition-colors duration-300 md:grid-cols-2 md:p-8"
           >
-            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-sm border border-caco3-white/10 bg-cloud-gray">
-              <span className="text-sm text-hypogenica-green/40">
-                Image placeholder
-              </span>
+            <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
+              <Image
+                src="/images/cave-rappel.jpg"
+                alt="A caver descending among cave formations"
+                fill
+                sizes="(min-width: 768px) 45vw, 100vw"
+                className="object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-[1.04]"
+              />
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center justify-between">
@@ -96,7 +104,7 @@ export function NewsSection() {
         {/* Remaining cards */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {rest.map((article, i) => (
-            <Reveal key={article.title} delay={i * 120}>
+            <Reveal key={article.title} delay={i * 100}>
               <a
                 href={article.href}
                 target="_blank"

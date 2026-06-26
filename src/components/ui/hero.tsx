@@ -16,13 +16,13 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-12 pt-36 md:px-12 md:pb-16 md:pt-44">
         {/* Top: eyebrow + headline */}
         <div className="flex-1">
-          <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>
+          <div className="animate-fade-up" style={{ animationDelay: "0ms" }}>
             <Eyebrow>Sustainable materials biotech</Eyebrow>
           </div>
 
           <h1
             className="animate-fade-up mt-8 max-w-[15ch] text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-caco3-white sm:text-8xl lg:text-9xl xl:text-[10.5rem]"
-            style={{ animationDelay: "180ms" }}
+            style={{ animationDelay: "150ms" }}
           >
             Using biotech for a better future.
           </h1>
@@ -32,7 +32,7 @@ export function Hero() {
         <div className="mt-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div
             className="animate-fade-up max-w-xl"
-            style={{ animationDelay: "340ms" }}
+            style={{ animationDelay: "300ms" }}
           >
             <p className="text-base font-normal leading-relaxed text-caco3-white/80 sm:text-lg">
               We&apos;ve patented a bacteria-driven way to make pure calcium
@@ -46,7 +46,7 @@ export function Hero() {
 
           <div
             className="animate-fade-up shrink-0"
-            style={{ animationDelay: "460ms" }}
+            style={{ animationDelay: "450ms" }}
           >
             <ArrowButton href="#science" variant="solid">
               Discover our science

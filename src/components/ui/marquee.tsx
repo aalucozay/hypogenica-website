@@ -1,26 +1,26 @@
-const PHRASES = [
-  "Carbon-Negative CaCO3",
-  "Cleaner",
-  "Cheaper",
-  "Efficient",
-  "Cave Science",
+const STATEMENTS = [
+  "Pure calcium carbonate from cave bacteria",
+  "Carbon negative, by nature's own chemistry",
+  "Born in Alabama's deepest caves",
+  "Cleaner, cheaper, made the way nature intended",
 ];
 
 /**
- * Understated single-line ticker. Two identical halves sit side by side and the
- * track translates -50%, so the loop is seamless. Small, uppercase, wide
- * tracking and low opacity — a quiet design accent, not a content block.
+ * A quiet editorial ribbon. Flowing sentence-case statements drift past in a
+ * light italic, widely spaced, with no separators or all-caps — closer to a
+ * line of margin notes than a tech ticker. Two identical halves translate -50%
+ * for a seamless loop.
  */
 function Half() {
   return (
     <div className="flex shrink-0 items-center">
-      {PHRASES.map((phrase) => (
-        <div key={phrase} className="flex items-center">
-          <span className="px-6 font-mono text-xs uppercase tracking-[0.25em] sm:text-sm">
-            {phrase}
-          </span>
-          <span aria-hidden="true">·</span>
-        </div>
+      {STATEMENTS.map((statement) => (
+        <span
+          key={statement}
+          className="whitespace-nowrap px-14 text-xl font-light italic sm:text-2xl"
+        >
+          {statement}
+        </span>
       ))}
     </div>
   );
@@ -28,8 +28,8 @@ function Half() {
 
 export function Marquee() {
   return (
-    <div className="overflow-hidden border-y border-caco3-white/10 bg-deep-green py-8">
-      <div className="flex w-max animate-marquee text-caco3-white/55">
+    <div className="overflow-hidden bg-deep-green py-14">
+      <div className="flex w-max animate-marquee text-caco3-white/40">
         <Half />
         <Half />
       </div>
