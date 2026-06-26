@@ -1,75 +1,96 @@
 "use client";
 
 import { Reveal } from "@/components/ui/reveal";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { ScrollText } from "@/components/ui/scroll-text";
+import { ArrowButton } from "@/components/ui/arrow-button";
 
-const FEATURES = [
+const PILLARS = [
   {
-    number: "01.",
+    index: "01",
     title: "Cave Science",
     description:
-      "We explore microbial ecosystems deep within Alabama's 9,000+ caves to understand how bacteria naturally precipitate minerals in extreme environments.",
+      "We harness microbial ecosystems from Alabama's vast cave systems to control biomineralization with unmatched precision.",
+    theme: "bg-future-teal text-hypogenica-green",
+    sub: "text-hypogenica-green/70",
   },
   {
-    number: "02.",
+    index: "02",
     title: "Biomineralization",
     description:
-      "Our patented bacteria-driven process produces high-purity calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.",
+      "Our patented, bacteria-driven process produces high-purity calcium carbonate from atmospheric CO2.",
+    theme: "bg-deep-green text-caco3-white border border-cloud-gray/10",
+    sub: "text-cloud-gray",
   },
   {
-    number: "03.",
+    index: "03",
     title: "Carbon Capture",
     description:
-      "Every gram of CaCO3 we produce sequesters carbon. Our process is carbon-negative, turning greenhouse gas into industrial-grade material.",
+      "Every batch sequesters carbon, powering a carbon-negative supply of industrial-grade calcite.",
+    theme: "bg-cloud-gray text-hypogenica-green",
+    sub: "text-hypogenica-green/70",
   },
 ];
 
-function ImagePlaceholder() {
-  return (
-    <div className="flex aspect-[10/7] w-full items-center justify-center rounded-2xl border border-cloud-gray/20 bg-cloud-gray">
-      <span className="text-sm font-medium tracking-wide text-hypogenica-green/40">
-        Image Placeholder
-      </span>
-    </div>
-  );
-}
-
 export function ScienceSection() {
   return (
-    <section id="science" className="bg-hypogenica-green py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
-        <Reveal>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-future-teal">
-            What We Do
-          </p>
-        </Reveal>
+    <section className="relative bg-hypogenica-green py-24 md:py-36">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+        <div className="grid gap-12 md:grid-cols-[280px_1fr]">
+          {/* Left rail eyebrow */}
+          <div>
+            <Reveal>
+              <div className="text-future-teal md:sticky md:top-32">
+                <Eyebrow>The Platform</Eyebrow>
+              </div>
+            </Reveal>
+          </div>
 
-        <div className="mt-16 flex flex-col gap-20 md:gap-28">
-          {FEATURES.map((feature, index) => {
-            const imageRight = index % 2 === 0;
-            return (
-              <Reveal key={feature.number} delay={index * 120}>
-                <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-                  {/* Text */}
-                  <div className={imageRight ? "md:order-1" : "md:order-2"}>
-                    <span className="block text-6xl font-bold text-future-teal/20 md:text-7xl">
-                      {feature.number}
-                    </span>
-                    <h3 className="mt-4 text-3xl font-bold text-caco3-white md:text-4xl">
-                      {feature.title}
-                    </h3>
-                    <p className="mt-5 max-w-md text-lg font-light leading-relaxed text-cloud-gray">
-                      {feature.description}
-                    </p>
-                  </div>
+          {/* Heading + body */}
+          <div>
+            <Reveal>
+              <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl">
+                <ScrollText text="Turning cave chemistry into an engine of carbon-negative materials." />
+              </h2>
+            </Reveal>
 
-                  {/* Image */}
-                  <div className={imageRight ? "md:order-2" : "md:order-1"}>
-                    <ImagePlaceholder />
-                  </div>
+            <Reveal delay={120}>
+              <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-cloud-gray">
+                Our platform unites microbiology, geology, and materials science
+                to produce calcium carbonate the way nature does — only faster,
+                cleaner, and at industrial scale.
+              </p>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div className="mt-10">
+                <ArrowButton href="#about">Meet the Team</ArrowButton>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Pillar cards */}
+        <div className="mt-20 grid gap-5 md:grid-cols-3">
+          {PILLARS.map((pillar, i) => (
+            <Reveal key={pillar.index} delay={i * 120}>
+              <article
+                className={`group flex h-full min-h-[320px] flex-col justify-between rounded-3xl p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${pillar.theme}`}
+              >
+                <span className="font-mono text-sm tracking-[0.14em] opacity-60">
+                  {pillar.index}
+                </span>
+                <div>
+                  <h3 className="text-2xl font-medium md:text-3xl">
+                    {pillar.title}
+                  </h3>
+                  <p className={`mt-4 text-base font-light leading-relaxed ${pillar.sub}`}>
+                    {pillar.description}
+                  </p>
                 </div>
-              </Reveal>
-            );
-          })}
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

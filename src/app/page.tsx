@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/ui/navbar";
 import { Hero } from "@/components/ui/hero";
+import { StatementSection } from "@/components/ui/statement-section";
 import { ScienceSection } from "@/components/ui/science-section";
 import { Marquee } from "@/components/ui/marquee";
 import { TeamSection } from "@/components/ui/team-section";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <StatementSection />
         <ScienceSection />
         <Marquee />
         <TeamSection />

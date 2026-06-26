@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /*
- * Tailwind CSS v4 uses CSS-first configuration. Custom colors and easing
- * are declared here in @theme (this is the v4 equivalent of tailwind.config.ts)
+ * Tailwind CSS v4 uses CSS-first configuration. Custom colors, fonts and
+ * easing are declared here in @theme (the v4 equivalent of tailwind.config.ts)
  * and automatically generate utilities like `bg-hypogenica-green`,
- * `text-ralf-yellow`, and `ease-out-expo`.
+ * `text-ralf-yellow`, `font-mono`, and `ease-out-expo`.
  */
 @theme {
   --color-hypogenica-green: #081c15;
@@ -13,7 +13,11 @@
   --color-future-teal: #0bdd99;
   --color-ralf-yellow: #fcdb48;
 
+  /* A touch lighter than the base green — used for elevated cards/sections. */
+  --color-deep-green: #0a2319;
+
   --font-sans: var(--font-funnel-sans);
+  --font-mono: var(--font-roboto-mono);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -27,9 +31,9 @@ body {
   color: var(--color-caco3-white);
 }
 
-/* Infinite horizontal marquee. The track holds two identical copies of the
-   content, so translating by -50% lands exactly at the start of the second
-   copy for a seamless loop. */
+/* ---------------------------------------------------------------------------
+   Marquee — two identical copies in the track; translate -50% loops seamlessly
+   --------------------------------------------------------------------------- */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -40,15 +44,16 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 22s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
-/* On-mount fade-up entrance (used by the hero). Elements start hidden and
-   animate in; pair with an inline animation-delay to stagger. */
+/* ---------------------------------------------------------------------------
+   On-mount fade-up entrance (hero). Pair with inline animation-delay to stagger
+   --------------------------------------------------------------------------- */
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(34px);
   }
   to {
     opacity: 1;
@@ -58,5 +63,85 @@ body {
 
 .animate-fade-up {
   opacity: 0;
-  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------------------------------------------------------------------------
+   Organic flowing background — soft drifting colour blobs behind dark sections.
+   Library-free; pure CSS keyframes on transform (GPU-friendly).
+   --------------------------------------------------------------------------- */
+.organic-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+@keyframes blob-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(6%, -8%, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-7%, 6%, 0) scale(0.92);
+  }
+}
+
+@keyframes blob-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-9%, 9%, 0) scale(1.15);
+  }
+}
+
+@keyframes blob-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(8%, 7%, 0) scale(0.9);
+  }
+}
+
+.animate-blob-a {
+  animation: blob-a 20s ease-in-out infinite;
+}
+.animate-blob-b {
+  animation: blob-b 26s ease-in-out infinite;
+}
+.animate-blob-c {
+  animation: blob-c 32s ease-in-out infinite;
+}
+
+/* ---------------------------------------------------------------------------
+   Respect reduced-motion preferences
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-fade-up,
+  .animate-blob-a,
+  .animate-blob-b,
+  .animate-blob-c {
+    animation: none !important;
+  }
+  .animate-fade-up {
+    opacity: 1;
+  }
 }

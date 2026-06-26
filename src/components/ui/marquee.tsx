@@ -1,30 +1,40 @@
 "use client";
 
-const PHRASES = ["Carbon-negative CaCO3", "Cleaner", "Cheaper", "Efficient"];
+import { HorizontalScrollText } from "@/components/ui/horizontal-scroll-text";
 
-function MarqueeGroup() {
-  // One full copy of the content. Two copies are rendered in the track so the
-  // -50% translate loops seamlessly.
+const PHRASES = ["Carbon-Negative CaCO3", "Cleaner", "Cheaper", "Efficient"];
+
+function Band({ accent }: { accent?: boolean }) {
+  // Repeat enough to overfill the viewport at large type sizes.
+  const items = Array.from({ length: 3 }).flatMap(() => PHRASES);
   return (
-    <div className="flex shrink-0 items-center" aria-hidden="true">
-      {PHRASES.map((phrase, index) => (
-        <span key={index} className="flex items-center">
-          <span className="px-6 text-lg font-medium uppercase tracking-wide text-future-teal md:text-xl">
+    <span className="inline-flex items-center">
+      {items.map((phrase, i) => (
+        <span key={i} className="inline-flex items-center">
+          <span
+            className={`px-6 text-6xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl ${
+              accent ? "text-future-teal" : "text-caco3-white"
+            }`}
+          >
             {phrase}
           </span>
           <span className="text-future-teal/50">·</span>
         </span>
       ))}
-    </div>
+    </span>
   );
 }
 
 export function Marquee() {
   return (
-    <div className="overflow-hidden border-y border-cloud-gray/10 bg-hypogenica-green py-5">
-      <div className="flex w-max animate-marquee">
-        <MarqueeGroup />
-        <MarqueeGroup />
+    <div className="relative overflow-hidden border-y border-cloud-gray/10 bg-deep-green py-16 md:py-24">
+      <div className="flex flex-col gap-3">
+        <HorizontalScrollText from={4} to={-26}>
+          <Band />
+        </HorizontalScrollText>
+        <HorizontalScrollText from={-26} to={6}>
+          <Band accent />
+        </HorizontalScrollText>
       </div>
     </div>
   );
