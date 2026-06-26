@@ -5,9 +5,9 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { ScrollText } from "@/components/ui/scroll-text";
 
 const STATS = [
-  { value: "Carbon‑Negative", label: "Every gram sequesters CO2" },
-  { value: "$Ms Saved", label: "Lower-cost production at scale" },
-  { value: "Pure CaCO3", label: "Industrial-grade calcite" },
+  { value: "Carbon negative", label: "Every gram sequesters CO2" },
+  { value: "Millions saved", label: "Lower cost production at scale" },
+  { value: "Pure CaCO3", label: "Industrial grade calcite" },
 ];
 
 export function ImpactSection() {
@@ -20,8 +20,8 @@ export function ImpactSection() {
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
-              <div className="text-future-teal md:sticky md:top-32">
-                <Eyebrow dotClassName="bg-future-teal">The Value</Eyebrow>
+              <div className="md:sticky md:top-32">
+                <Eyebrow>The value</Eyebrow>
               </div>
             </Reveal>
           </div>
@@ -37,11 +37,11 @@ export function ImpactSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-hypogenica-green/80">
-                It&apos;s not just millions of dollars saved — it&apos;s also
+              <p className="mt-8 max-w-2xl text-lg font-normal leading-relaxed text-hypogenica-green/80">
+                It&apos;s not just millions of dollars saved. It&apos;s also
                 preserving the future of our earth and its natural habitats. As
                 scientists and cavers, we&apos;re invested in a world where
-                industry and environment synergize.
+                industry and environment work together.
               </p>
             </Reveal>
 
@@ -52,7 +52,7 @@ export function ImpactSection() {
                     <p className="text-2xl font-medium tracking-[-0.01em] md:text-3xl">
                       {stat.value}
                     </p>
-                    <p className="mt-2 font-mono text-xs uppercase tracking-[0.12em] text-hypogenica-green/60">
+                    <p className="mt-2 text-sm text-hypogenica-green/60">
                       {stat.label}
                     </p>
                   </div>

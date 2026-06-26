@@ -10,7 +10,7 @@ const ARTICLES = [
     category: "Funding",
     title: "NSF STTR Phase I Award",
     snippet:
-      "Awarded NSF funding for Microbially-Produced Precipitated Calcium Carbonates (mPCCs) as a Paint Filler — advancing fundamental biomineralization research into novel biotechnology.",
+      "Awarded NSF funding for Microbially-Produced Precipitated Calcium Carbonates (mPCCs) as a Paint Filler. The grant advances fundamental biomineralization research into new biotechnology.",
     href: "https://seedfund.nsf.gov/awardees/phase-1/details/?company=hypogenica-llc",
   },
   {
@@ -24,14 +24,25 @@ const ARTICLES = [
   {
     date: "2024",
     category: "Award",
-    title: "Culverhouse Competition — First Prize",
+    title: "Culverhouse Competition First Prize",
     snippet:
-      "Won $5,000 first prize at the University of Alabama's Faculty/Staff Competition for Carbon-Negative CaCO3 Production.",
+      "Won the $5,000 first prize at the University of Alabama's Faculty and Staff Competition for Carbon-Negative CaCO3 Production.",
     href: "https://aei.culverhouse.ua.edu/faculty-staff/2024-faculty-staff-competition-winners/",
   },
 ];
 
 const [featured, ...rest] = ARTICLES;
+
+function ReadMore() {
+  return (
+    <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-300 group-hover:text-future-teal">
+      Read more
+      <span className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1">
+        →
+      </span>
+    </span>
+  );
+}
 
 export function NewsSection() {
   return (
@@ -46,7 +57,7 @@ export function NewsSection() {
           </Reveal>
           <Reveal delay={100}>
             <ArrowButton href={featured.href} external>
-              View All Articles
+              View all articles
             </ArrowButton>
           </Reveal>
         </div>
@@ -57,82 +68,57 @@ export function NewsSection() {
             href={featured.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-16 grid gap-8 rounded-lg border border-cloud-gray/10 bg-deep-green p-6 transition-colors duration-300 hover:border-cloud-gray/25 md:grid-cols-2 md:p-8"
+            className="group mt-16 grid gap-8 rounded-lg bg-deep-green p-6 transition-colors duration-300 md:grid-cols-2 md:p-8"
           >
-            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-sm border border-cloud-gray/20 bg-cloud-gray">
-              <span className="font-mono text-xs uppercase tracking-[0.14em] text-hypogenica-green/40">
-                Image Placeholder
+            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-sm border border-caco3-white/10 bg-cloud-gray">
+              <span className="text-sm text-hypogenica-green/40">
+                Image placeholder
               </span>
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center justify-between">
-                <div className="text-future-teal">
-                  <Eyebrow>{featured.category}</Eyebrow>
-                </div>
-                <span className="font-mono text-xs uppercase tracking-[0.12em] text-cloud-gray/70">
+                <Eyebrow>{featured.category}</Eyebrow>
+                <span className="text-sm text-caco3-white/50">
                   {featured.date}
                 </span>
               </div>
               <h3 className="mt-6 text-3xl font-medium leading-tight tracking-[-0.01em] text-caco3-white md:text-4xl">
                 {featured.title}
               </h3>
-              <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-caco3-white/80">
+              <p className="mt-4 max-w-xl text-base font-normal leading-relaxed text-caco3-white/80">
                 {featured.snippet}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.14em] text-future-teal">
-                Read more
-                <span className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1">
-                  →
-                </span>
-              </span>
+              <ReadMore />
             </div>
           </a>
         </Reveal>
 
         {/* Remaining cards */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {rest.map((article, i) => {
-            const teal = i % 2 === 1;
-            return (
-              <Reveal key={article.title} delay={i * 120}>
-                <a
-                  href={article.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group flex h-full flex-col rounded-lg p-8 transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${
-                    teal
-                      ? "bg-future-teal text-hypogenica-green"
-                      : "border border-cloud-gray/10 bg-deep-green text-caco3-white"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs uppercase tracking-[0.12em] opacity-70">
-                      {article.category}
-                    </span>
-                    <span className="font-mono text-xs uppercase tracking-[0.12em] opacity-70">
-                      {article.date}
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-2xl font-medium leading-snug tracking-[-0.01em] md:text-3xl">
-                    {article.title}
-                  </h3>
-                  <p
-                    className={`mt-4 flex-1 text-base font-light leading-relaxed ${
-                      teal ? "text-hypogenica-green/75" : "text-caco3-white/80"
-                    }`}
-                  >
-                    {article.snippet}
-                  </p>
-                  <span className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.14em]">
-                    Read more
-                    <span className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1">
-                      →
-                    </span>
-                  </span>
-                </a>
-              </Reveal>
-            );
-          })}
+          {rest.map((article, i) => (
+            <Reveal key={article.title} delay={i * 120}>
+              <a
+                href={article.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex h-full flex-col rounded-lg p-8 text-caco3-white transition-transform duration-500 ease-out-expo hover:-translate-y-1.5 ${
+                  i % 2 === 0 ? "bg-moss-green" : "bg-deep-green"
+                }`}
+              >
+                <div className="flex items-center justify-between text-sm text-caco3-white/50">
+                  <span>{article.category}</span>
+                  <span>{article.date}</span>
+                </div>
+                <h3 className="mt-6 text-2xl font-medium leading-snug tracking-[-0.01em] md:text-3xl">
+                  {article.title}
+                </h3>
+                <p className="mt-4 flex-1 text-base font-normal leading-relaxed text-caco3-white/80">
+                  {article.snippet}
+                </p>
+                <ReadMore />
+              </a>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -5,12 +5,12 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-hypogenica-green py-32 md:py-48">
+    <section id="contact" className="bg-moss-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
-              <div className="text-future-teal md:sticky md:top-32">
+              <div className="md:sticky md:top-32">
                 <Eyebrow>Contact</Eyebrow>
               </div>
             </Reveal>
@@ -21,7 +21,7 @@ export function ContactSection() {
             <div>
               <Reveal>
                 <h2 className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl">
-                  Get In Touch
+                  Get in touch
                 </h2>
               </Reveal>
               <Reveal delay={100}>
@@ -32,7 +32,7 @@ export function ContactSection() {
                   >
                     info@hypogenica.com
                   </a>
-                  <p className="font-mono text-sm uppercase tracking-[0.14em] text-cloud-gray">
+                  <p className="text-base text-caco3-white/70">
                     Tuscaloosa, Alabama
                   </p>
                 </div>
@@ -48,7 +48,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-cloud-gray"
+                    className="mb-2 block text-sm text-caco3-white/70"
                   >
                     Name
                   </label>
@@ -63,7 +63,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-cloud-gray"
+                    className="mb-2 block text-sm text-caco3-white/70"
                   >
                     Email
                   </label>
@@ -78,7 +78,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-cloud-gray"
+                    className="mb-2 block text-sm text-caco3-white/70"
                   >
                     Message
                   </label>
@@ -92,9 +92,9 @@ export function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-xl bg-future-teal px-8 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.16em] text-hypogenica-green transition-all duration-300 ease-out-expo hover:brightness-110"
+                  className="inline-flex items-center rounded-md bg-future-teal px-7 py-3.5 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:brightness-105"
                 >
-                  Send Message
+                  Send message
                 </button>
               </form>
             </Reveal>

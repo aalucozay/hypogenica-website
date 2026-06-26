@@ -8,25 +8,25 @@ import { ArrowButton } from "@/components/ui/arrow-button";
 const PILLARS = [
   {
     index: "01",
-    title: "Cave Science",
+    title: "Cave science",
     description:
       "Microbial ecosystems from Alabama's caves, directing biomineralization with precision.",
-    theme: "bg-future-teal text-hypogenica-green",
-    sub: "text-hypogenica-green/70",
+    theme: "bg-moss-green text-caco3-white",
+    sub: "text-caco3-white/70",
   },
   {
     index: "02",
     title: "Biomineralization",
     description:
       "A patented, bacteria-driven process that pulls pure CaCO3 from atmospheric CO2.",
-    theme: "bg-deep-green text-caco3-white border border-cloud-gray/10",
+    theme: "bg-deep-green text-caco3-white",
     sub: "text-caco3-white/70",
   },
   {
     index: "03",
-    title: "Carbon Capture",
+    title: "Carbon capture",
     description:
-      "Every batch sequesters carbon — a carbon-negative supply of industrial calcite.",
+      "Every batch sequesters carbon, creating a carbon-negative supply of industrial calcite.",
     theme: "bg-cloud-gray text-hypogenica-green",
     sub: "text-hypogenica-green/70",
   },
@@ -40,8 +40,8 @@ export function ScienceSection() {
           {/* Left rail eyebrow */}
           <div>
             <Reveal>
-              <div className="text-future-teal md:sticky md:top-32">
-                <Eyebrow>The Platform</Eyebrow>
+              <div className="md:sticky md:top-32">
+                <Eyebrow>The platform</Eyebrow>
               </div>
             </Reveal>
           </div>
@@ -55,15 +55,16 @@ export function ScienceSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-lg font-light leading-relaxed text-caco3-white/80">
-                Microbiology, geology, and materials science — producing calcium
-                carbonate the way nature does, at industrial scale.
+              <p className="mt-8 max-w-xl text-lg font-normal leading-relaxed text-caco3-white/80">
+                We combine microbiology, geology, and materials science to
+                produce calcium carbonate the way nature does, at industrial
+                scale.
               </p>
             </Reveal>
 
             <Reveal delay={200}>
               <div className="mt-10">
-                <ArrowButton href="#about">Meet the Team</ArrowButton>
+                <ArrowButton href="#about">Meet the team</ArrowButton>
               </div>
             </Reveal>
           </div>
@@ -86,7 +87,7 @@ export function ScienceSection() {
                   <h3 className="text-2xl font-medium md:text-3xl">
                     {pillar.title}
                   </h3>
-                  <p className={`mt-4 text-base font-light leading-relaxed ${pillar.sub}`}>
+                  <p className={`mt-4 text-base font-normal leading-relaxed ${pillar.sub}`}>
                     {pillar.description}
                   </p>
                 </div>

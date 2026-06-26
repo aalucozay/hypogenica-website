@@ -28,7 +28,7 @@ function Half() {
 
 export function Marquee() {
   return (
-    <div className="overflow-hidden border-y border-cloud-gray/10 bg-hypogenica-green py-8">
+    <div className="overflow-hidden border-y border-caco3-white/10 bg-deep-green py-8">
       <div className="flex w-max animate-marquee text-caco3-white/55">
         <Half />
         <Half />

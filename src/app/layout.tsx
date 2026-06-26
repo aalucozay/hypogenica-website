@@ -19,7 +19,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hypogenica — Using Biotech for a Better Future",
+  title: "Hypogenica · Using biotech for a better future",
   description:
     "Hypogenica is a sustainable materials biotech company producing high-purity calcium carbonate from atmospheric CO2 with a bacteria-driven, carbon-negative process inspired by cave science.",
 };

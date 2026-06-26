@@ -13,13 +13,13 @@ const TEAM = [
 
 export function TeamSection() {
   return (
-    <section id="about" className="bg-hypogenica-green py-32 md:py-48">
+    <section id="about" className="bg-moss-green py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
-              <div className="text-future-teal md:sticky md:top-32">
-                <Eyebrow>The Team</Eyebrow>
+              <div className="md:sticky md:top-32">
+                <Eyebrow>The team</Eyebrow>
               </div>
             </Reveal>
           </div>
@@ -32,9 +32,9 @@ export function TeamSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-lg font-light leading-relaxed text-caco3-white/80">
-                Experts in cave, microbiology, and materials sciences — drawn
-                from the University of Alabama and Sherwin-Williams.
+              <p className="mt-8 max-w-xl text-lg font-normal leading-relaxed text-caco3-white/80">
+                Experts in cave, microbiology, and materials sciences, drawn from
+                the University of Alabama and Sherwin-Williams.
               </p>
             </Reveal>
           </div>
@@ -44,17 +44,15 @@ export function TeamSection() {
           {TEAM.map((member, i) => (
             <Reveal key={member.name} delay={i * 100}>
               <div className="group">
-                <div className="flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm border border-cloud-gray/20 bg-cloud-gray p-5 transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
-                  <span className="font-mono text-xs uppercase tracking-[0.14em] text-hypogenica-green/40">
-                    Team Member
+                <div className="flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm border border-hypogenica-green/10 bg-cloud-gray p-5 transition-transform duration-500 ease-out-expo group-hover:-translate-y-1.5">
+                  <span className="text-sm text-hypogenica-green/40">
+                    Team member
                   </span>
                 </div>
                 <h3 className="mt-4 text-lg font-medium text-caco3-white">
                   {member.name}
                 </h3>
-                <p className="font-mono text-xs uppercase tracking-[0.12em] text-future-teal">
-                  {member.role}
-                </p>
+                <p className="text-sm text-caco3-white/55">{member.role}</p>
               </div>
             </Reveal>
           ))}

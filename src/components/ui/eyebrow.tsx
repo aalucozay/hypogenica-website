@@ -1,24 +1,17 @@
 interface EyebrowProps {
   children: React.ReactNode;
-  /** Colour of the small leading square. Defaults to Future Teal. */
-  dotClassName?: string;
   className?: string;
 }
 
 /**
- * Monospace uppercase section label inside a subtle pill with a small leading
- * square — the recurring "what we do" marker used across the page.
+ * A small, quiet section label. No pill, border, or all-caps tracking — just
+ * understated muted text that introduces a section without shouting.
  */
-export function Eyebrow({
-  children,
-  dotClassName = "bg-future-teal",
-  className = "",
-}: EyebrowProps) {
+export function Eyebrow({ children, className = "" }: EyebrowProps) {
+  // Inherits the surrounding text colour and simply dims it, so it reads
+  // correctly on both dark green and light sections.
   return (
-    <span
-      className={`inline-flex items-center gap-2.5 rounded-md border border-current/10 bg-current/5 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.18em] ${className}`}
-    >
-      <span className={`size-2 rounded-[2px] ${dotClassName}`} />
+    <span className={`block text-sm font-medium opacity-55 ${className}`}>
       {children}
     </span>
   );

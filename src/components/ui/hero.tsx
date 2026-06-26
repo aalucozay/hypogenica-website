@@ -6,21 +6,18 @@ import { ArrowButton } from "@/components/ui/arrow-button";
 export function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden bg-hypogenica-green">
-      {/* Flowing organic background */}
+      {/* Flowing organic background — soft tonal greens with one faint teal note */}
       <div className="organic-bg">
-        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-future-teal/20" />
-        <span className="blob animate-blob-b right-[-15%] top-[10%] size-[50vw] bg-[#0e3a2a]/80" />
-        <span className="blob animate-blob-c bottom-[-20%] left-[20%] size-[45vw] bg-future-teal/10" />
+        <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-moss-green/70" />
+        <span className="blob animate-blob-b right-[-15%] top-[10%] size-[50vw] bg-deep-green/80" />
+        <span className="blob animate-blob-c bottom-[-20%] left-[20%] size-[45vw] bg-future-teal/8" />
       </div>
 
       <div className="relative mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-12 pt-36 md:px-12 md:pb-16 md:pt-44">
         {/* Top: eyebrow + headline */}
         <div className="flex-1">
-          <div
-            className="animate-fade-up text-future-teal"
-            style={{ animationDelay: "80ms" }}
-          >
-            <Eyebrow>Sustainable Materials Biotech</Eyebrow>
+          <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>
+            <Eyebrow>Sustainable materials biotech</Eyebrow>
           </div>
 
           <h1
@@ -37,12 +34,12 @@ export function Hero() {
             className="animate-fade-up max-w-xl"
             style={{ animationDelay: "340ms" }}
           >
-            <p className="text-base font-light leading-relaxed text-caco3-white/80 sm:text-lg">
+            <p className="text-base font-normal leading-relaxed text-caco3-white/80 sm:text-lg">
               We&apos;ve patented a bacteria-driven way to make pure calcium
-              carbonate — cleaner, cheaper, and more efficient than anything
-              before it.
+              carbonate that is cleaner, cheaper, and more efficient than
+              anything before it.
             </p>
-            <p className="mt-4 font-mono text-sm uppercase tracking-[0.14em] text-future-teal">
+            <p className="mt-5 text-lg italic text-caco3-white/90">
               How? Using cave science.
             </p>
           </div>
@@ -51,7 +48,9 @@ export function Hero() {
             className="animate-fade-up shrink-0"
             style={{ animationDelay: "460ms" }}
           >
-            <ArrowButton href="#science">Discover Our Science</ArrowButton>
+            <ArrowButton href="#science" variant="solid">
+              Discover our science
+            </ArrowButton>
           </div>
         </div>
       </div>

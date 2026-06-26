@@ -7,14 +7,16 @@
  * `text-ralf-yellow`, `font-mono`, and `ease-out-expo`.
  */
 @theme {
-  --color-hypogenica-green: #081c15;
+  /* Warm sage/forest green family. The base is light enough to feel organic
+     and alive rather than a generic dark-mode template. Section backgrounds
+     shift between these variants to build depth. */
+  --color-hypogenica-green: #1c3a2b; /* base background */
+  --color-deep-green: #142b20; /* darker variant: statement, marquee, footer */
+  --color-moss-green: #244a35; /* lighter variant: alternating sections */
   --color-caco3-white: #ffffff;
-  --color-cloud-gray: #dae6e5;
+  --color-cloud-gray: #e2ece6; /* warm off-white */
   --color-future-teal: #0bdd99;
   --color-ralf-yellow: #fcdb48;
-
-  /* A touch lighter than the base green — used for elevated cards/sections. */
-  --color-deep-green: #0a2319;
 
   --font-sans: var(--font-funnel-sans);
   --font-mono: var(--font-roboto-mono);
@@ -29,6 +31,7 @@ html {
 body {
   background-color: var(--color-hypogenica-green);
   color: var(--color-caco3-white);
+  line-height: 1.65;
 }
 
 /* Offset anchored sections so the fixed navbar doesn't cover their heading
