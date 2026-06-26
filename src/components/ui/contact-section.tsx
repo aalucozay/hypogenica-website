@@ -5,17 +5,8 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden bg-moss-green py-32 md:py-48"
-    >
-      {/* Living aurora background */}
-      <div className="organic-bg">
-        <span className="blob animate-blob-b left-[-10%] top-[10%] size-[45vw] bg-deep-green/70" />
-        <span className="blob animate-blob-d right-[-8%] bottom-[-15%] size-[42vw] bg-future-teal/10" />
-      </div>
-
-      <div className="relative mx-auto max-w-[1600px] px-6 md:px-12">
+    <section id="contact" className="bg-hypogenica-green py-32 md:py-48">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
             <Reveal>
@@ -25,87 +16,25 @@ export function ContactSection() {
             </Reveal>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Info */}
-            <div>
-              <Reveal>
-                <h2 className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl">
-                  Get in touch
-                </h2>
-              </Reveal>
-              <Reveal delay={100}>
-                <div className="mt-8 space-y-3">
-                  <a
-                    href="mailto:info@hypogenica.com"
-                    className="block text-xl font-medium text-caco3-white transition-opacity duration-300 hover:opacity-70"
-                  >
-                    info@hypogenica.com
-                  </a>
-                  <p className="text-base text-caco3-white/70">
-                    Tuscaloosa, Alabama
-                  </p>
-                </div>
-              </Reveal>
-            </div>
+          <div>
+            <Reveal>
+              <h2 className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl">
+                Get in touch
+              </h2>
+            </Reveal>
 
-            {/* Form */}
-            <Reveal delay={160}>
-              <form
-                onSubmit={(event) => event.preventDefault()}
-                className="space-y-5"
-              >
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm text-caco3-white/70"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className="w-full rounded-xl border border-cloud-gray/15 bg-caco3-white/5 px-4 py-3.5 text-caco3-white placeholder-cloud-gray/40 outline-none transition-colors duration-300 focus:border-future-teal"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm text-caco3-white/70"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className="w-full rounded-xl border border-cloud-gray/15 bg-caco3-white/5 px-4 py-3.5 text-caco3-white placeholder-cloud-gray/40 outline-none transition-colors duration-300 focus:border-future-teal"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block text-sm text-caco3-white/70"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full resize-none rounded-xl border border-cloud-gray/15 bg-caco3-white/5 px-4 py-3.5 text-caco3-white placeholder-cloud-gray/40 outline-none transition-colors duration-300 focus:border-future-teal"
-                    placeholder="How can we help?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="inline-flex items-center rounded-md bg-future-teal px-7 py-3.5 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:brightness-105"
+            <Reveal delay={100}>
+              <div className="mt-10 space-y-4">
+                <a
+                  href="mailto:info@hypogenica.com"
+                  className="block text-2xl font-medium text-caco3-white transition-opacity duration-300 hover:opacity-60 sm:text-3xl"
                 >
-                  Send message
-                </button>
-              </form>
+                  info@hypogenica.com
+                </a>
+                <p className="text-lg text-caco3-white/60">
+                  Tuscaloosa, Alabama
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>

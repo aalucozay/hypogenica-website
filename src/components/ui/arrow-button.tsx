@@ -3,10 +3,11 @@ interface ArrowButtonProps {
   href: string;
   external?: boolean;
   /**
-   * "solid" is the rare, deliberate teal CTA (use sparingly). "ghost" is an
-   * understated text link with an arrow that nudges on hover.
+   * "outline" is a bordered button that fills white on hover (the primary CTA).
+   * "ghost" is an understated text link with an arrow. "solid" is a rare teal
+   * fill, kept for occasional use.
    */
-  variant?: "solid" | "ghost";
+  variant?: "outline" | "solid" | "ghost";
   className?: string;
 }
 
@@ -38,6 +39,19 @@ export function ArrowButton({
       <polyline points="13 5 20 12 13 19" />
     </svg>
   );
+
+  if (variant === "outline") {
+    return (
+      <a
+        href={href}
+        {...linkProps}
+        className={`group inline-flex items-center gap-2.5 rounded-md border border-caco3-white/60 px-6 py-3.5 text-base font-medium text-caco3-white transition-colors duration-300 ease-out-expo hover:bg-caco3-white hover:text-hypogenica-green ${className}`}
+      >
+        {children}
+        {Arrow}
+      </a>
+    );
+  }
 
   if (variant === "solid") {
     return (

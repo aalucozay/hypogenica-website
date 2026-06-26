@@ -53,7 +53,7 @@ export function StatementSection() {
     <section
       id="science"
       ref={sectionRef}
-      className="relative h-[280vh] bg-deep-green"
+      className="relative h-[280vh] bg-hypogenica-green"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         {/* subtle backdrop glow */}

@@ -7,15 +7,13 @@
  * `text-ralf-yellow`, `font-mono`, and `ease-out-expo`.
  */
 @theme {
-  /* Warm sage/forest green family. The base is light enough to feel organic
-     and alive rather than a generic dark-mode template. Section backgrounds
-     shift between these variants to build depth. */
-  --color-hypogenica-green: #1c3a2b; /* base background */
-  --color-deep-green: #142b20; /* darker variant: statement, marquee, footer */
-  --color-moss-green: #244a35; /* lighter variant: alternating sections */
+  /* One deep, rich green for every dark section — warmer than the original
+     #081c15. The only other background is white (the Impact section). */
+  --color-hypogenica-green: #0d2818; /* primary background, everywhere */
+  --color-card-green: #12331f; /* ~5% lighter, for cards/subtle surfaces */
   --color-caco3-white: #ffffff;
-  --color-cloud-gray: #e2ece6; /* warm off-white */
-  --color-future-teal: #0bdd99;
+  --color-cloud-gray: #dae6e5; /* placeholder rectangles */
+  --color-future-teal: #0bdd99; /* accent, used very sparingly */
   --color-ralf-yellow: #fcdb48;
 
   --font-sans: var(--font-funnel-sans);
