@@ -24,6 +24,7 @@ const TEAM: Member[] = [
     name: "Dr. Hazel Barton",
     role: "CTO · Cave Microbiologist",
     initials: "HB",
+    photo: "/images/team/hazel-barton.jpg",
   },
   { name: "Materials Science", role: "Sherwin-Williams alumni", initials: "MS" },
   { name: "Microbiology", role: "University of Alabama", initials: "MB" },
