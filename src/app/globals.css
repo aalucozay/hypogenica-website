@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Tailwind CSS v4 uses CSS-first configuration. Custom colors and easing
+ * are declared here in @theme (this is the v4 equivalent of tailwind.config.ts)
+ * and automatically generate utilities like `bg-hypogenica-green`,
+ * `text-ralf-yellow`, and `ease-out-expo`.
+ */
+@theme {
+  --color-hypogenica-green: #081c15;
+  --color-caco3-white: #ffffff;
+  --color-cloud-gray: #dae6e5;
+  --color-future-teal: #0bdd99;
+  --color-ralf-yellow: #fcdb48;
+
+  --font-sans: var(--font-funnel-sans);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-hypogenica-green);
+  color: var(--color-caco3-white);
+}
+
+/* Infinite horizontal marquee. The track holds two identical copies of the
+   content, so translating by -50% lands exactly at the start of the second
+   copy for a seamless loop. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+/* On-mount fade-up entrance (used by the hero). Elements start hidden and
+   animate in; pair with an inline animation-delay to stagger. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
