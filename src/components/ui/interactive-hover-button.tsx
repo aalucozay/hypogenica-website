@@ -39,18 +39,19 @@ const InteractiveHoverButton = React.forwardRef<
   const content = (
     <>
       {/* Resting label — slides out on hover */}
-      <span className="relative z-10 inline-block transition-all duration-300 ease-out-expo group-hover:translate-x-[120%] group-hover:opacity-0">
+      <span className="relative z-10 inline-block transition-all duration-500 ease-out-expo group-hover:translate-x-[130%] group-hover:opacity-0">
         {text}
       </span>
 
       {/* Incoming label + arrow — slides in on hover, dark on the white fill */}
-      <span className="absolute inset-0 z-20 flex -translate-x-[120%] items-center justify-center gap-2 text-hypogenica-green opacity-0 transition-all duration-300 ease-out-expo group-hover:translate-x-0 group-hover:opacity-100">
+      <span className="absolute inset-0 z-20 flex -translate-x-[130%] items-center justify-center gap-2 text-hypogenica-green opacity-0 transition-all duration-500 ease-out-expo group-hover:translate-x-0 group-hover:opacity-100">
         {text}
         <Arrow />
       </span>
 
-      {/* White fill wipes in from the left — constant rounded corners, no dot */}
-      <span className="absolute inset-0 z-0 rounded-md bg-caco3-white transition-[clip-path] duration-300 ease-out-expo [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)]" />
+      {/* White fill wipes in from the left via GPU-composited transform (smooth).
+          No corner radius here — the parent's rounded-md + overflow-hidden clips it. */}
+      <span className="absolute inset-0 z-0 origin-left scale-x-0 bg-caco3-white transition-transform duration-500 ease-out-expo group-hover:scale-x-100" />
     </>
   );
 

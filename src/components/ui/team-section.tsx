@@ -59,7 +59,7 @@ export function TeamSection() {
               </p>
             </Reveal>
 
-            <div className="mt-16 grid max-w-xl grid-cols-2 gap-6">
+            <div className="mt-16 grid max-w-2xl grid-cols-2 gap-10 sm:gap-16">
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={i * 100} scale>
                   <div className="group">
