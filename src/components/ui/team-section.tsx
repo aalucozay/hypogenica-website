@@ -14,8 +14,16 @@ interface Member {
 }
 
 const TEAM: Member[] = [
-  { name: "Reilly Blackwell", role: "Founder & CEO" },
-  { name: "Dr. Hazel Barton", role: "CTO · Cave Microbiologist" },
+  {
+    name: "Reilly Blackwell",
+    role: "Founder & CEO",
+    image: "/images/reilly-blackwell.png",
+  },
+  {
+    name: "Dr. Hazel Barton",
+    role: "CTO · Cave Microbiologist",
+    image: "/images/hazel-barton.png",
+  },
 ];
 
 export function TeamSection() {
@@ -50,8 +58,8 @@ export function TeamSection() {
             <div className="mt-16 grid max-w-xl grid-cols-2 gap-6">
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={i * 100} scale>
-                  <div>
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-cloud-gray">
+                  <div className="group">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[radial-gradient(120%_85%_at_50%_12%,#ffffff,#dae6e5_78%)] shadow-[0_0_0_rgba(11,221,153,0)] transition-all duration-500 ease-out-expo group-hover:-translate-y-3 group-hover:shadow-[0_28px_60px_-12px_rgba(11,221,153,0.55)]">
                       {member.image ? (
                         <Image
                           src={member.image}
@@ -59,9 +67,11 @@ export function TeamSection() {
                           fill
                           sizes="(min-width: 768px) 280px, 45vw"
                           quality={90}
-                          className="object-cover"
+                          className="object-contain object-bottom transition-transform duration-700 ease-out-expo group-hover:scale-[1.05]"
                         />
                       ) : null}
+                      {/* subtle pulsing accent ring on hover */}
+                      <span className="pointer-events-none absolute inset-0 rounded-sm ring-1 ring-inset ring-future-teal/0 transition-colors duration-500 group-hover:ring-future-teal/50 group-hover:animate-pulse" />
                     </div>
                     <h3 className="mt-4 text-lg font-medium text-caco3-white">
                       {member.name}
