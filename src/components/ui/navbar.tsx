@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { AnimatedUnderline } from "@/components/ui/animated-underline";
 
 const LINKS = [
   { label: "About", href: "#about" },
@@ -52,14 +53,14 @@ export function Navbar() {
               href={link.href}
               className="text-base text-caco3-white/70 transition-colors duration-300 hover:text-caco3-white"
             >
-              {link.label}
+              <AnimatedUnderline>{link.label}</AnimatedUnderline>
             </a>
           ))}
           <a
             href="#contact"
-            className="border-b border-caco3-white/40 pb-0.5 text-base text-caco3-white transition-colors duration-300 hover:border-future-teal hover:text-future-teal"
+            className="text-base text-caco3-white transition-colors duration-300 hover:text-future-teal"
           >
-            Contact
+            <AnimatedUnderline>Contact</AnimatedUnderline>
           </a>
         </nav>
 
