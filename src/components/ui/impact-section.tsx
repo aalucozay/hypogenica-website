@@ -73,6 +73,7 @@ export function ImpactSection() {
                   alt="A caver examining white mineral formations on a cave wall"
                   fill
                   sizes="(min-width: 1024px) 380px, 100vw"
+                  quality={90}
                   className="object-cover"
                 />
               </div>

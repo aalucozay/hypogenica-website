@@ -15,6 +15,7 @@ export function CaveBand() {
         alt="A caver rappelling into a cavern lined with calcite formations"
         fill
         sizes="100vw"
+        quality={90}
         className="object-cover"
       />
       {/* Blend edges into the adjacent dark sections */}

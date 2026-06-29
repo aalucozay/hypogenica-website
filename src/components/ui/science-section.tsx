@@ -99,6 +99,7 @@ export function ScienceSection() {
                     alt={pillar.alt}
                     fill
                     sizes="(min-width: 768px) 320px, 100vw"
+                    quality={90}
                     className="object-cover"
                   />
                 </div>
