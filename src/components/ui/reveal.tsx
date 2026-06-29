@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 interface RevealProps {
   children: React.ReactNode;
@@ -23,18 +24,21 @@ export function Reveal({
   className = "",
 }: RevealProps) {
   const { ref, isInView } = useInView<HTMLDivElement>();
+  const reduced = usePrefersReducedMotion();
 
   const hidden = scale
     ? "translate-y-10 scale-[0.97] opacity-0"
     : "translate-y-10 opacity-0";
   const shown = "translate-y-0 scale-100 opacity-100";
+  // Reduced-motion users see content immediately, with no slide/fade.
+  const show = reduced || isInView;
 
   return (
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-[900ms] ease-out-expo ${
-        isInView ? shown : hidden
+      className={`${reduced ? "" : "transition-all duration-[900ms] ease-out-expo"} ${
+        show ? shown : hidden
       } ${className}`}
     >
       {children}

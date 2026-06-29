@@ -46,7 +46,7 @@ export function Footer() {
           </a>
         </nav>
 
-        <p className="text-sm text-caco3-white/40">
+        <p className="text-sm text-caco3-white/55">
           © 2026 Hypogenica LLC
         </p>
       </div>

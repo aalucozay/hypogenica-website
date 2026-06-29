@@ -34,7 +34,7 @@ export function ImpactSection() {
                 <Parallax>
                   <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl">
                   <ScrollText
-                    text="Making a cleaner, cost-effective calcium carbonate, for us all."
+                    text="Making a cleaner, cost effective calcium carbonate, for us all."
                     dim={0.18}
                   />
                 </h2>

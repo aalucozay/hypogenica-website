@@ -2,12 +2,13 @@
 
 import { useRef, useState } from "react";
 import { clamp, useScrollRaf } from "@/hooks/useScrollRaf";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { Eyebrow } from "@/components/ui/eyebrow";
 
 const STATEMENTS = [
   "We explore microbial ecosystems deep within Alabama's 9,000+ caves, where bacteria have precipitated minerals in the dark for millennia.",
-  "Our patented, bacteria-driven process pulls calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.",
-  "Every gram of CaCO3 we make sequesters carbon. The process is carbon-negative, turning a greenhouse gas into industrial-grade material.",
+  "Our patented, bacteria driven process pulls calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.",
+  "Every gram of CaCO3 we make sequesters carbon. The process is carbon negative, turning a greenhouse gas into industrial grade material.",
 ];
 
 export function StatementSection() {
@@ -17,6 +18,7 @@ export function StatementSection() {
   const wordsRef = useRef<(HTMLSpanElement | null)[]>([]);
   const indexRef = useRef(0);
   const [index, setIndex] = useState(0);
+  const reduced = usePrefersReducedMotion();
 
   useScrollRaf(() => {
     const el = sectionRef.current;
@@ -38,6 +40,7 @@ export function StatementSection() {
       counterRef.current.textContent = String(seg + 1).padStart(2, "0");
     }
 
+    if (reduced) return; // counter/progress still update; skip the word fill
     const spans = wordsRef.current;
     const n = spans.length;
     spans.forEach((span, i) => {
@@ -94,7 +97,10 @@ export function StatementSection() {
                   ref={(el) => {
                     wordsRef.current[i] = el;
                   }}
-                  style={{ opacity: 0.16, transition: "opacity 120ms linear" }}
+                  style={{
+                    opacity: reduced ? 1 : 0.16,
+                    transition: "opacity 120ms linear",
+                  }}
                 >
                   {word}
                   {i < words.length - 1 ? " " : ""}

@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useScrollRaf } from "@/hooks/useScrollRaf";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 interface ParallaxProps {
   children: React.ReactNode;
@@ -21,8 +22,15 @@ export function Parallax({
   className = "",
 }: ParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  // Clear any residual transform if the user switches to reduced motion.
+  useEffect(() => {
+    if (reduced && ref.current) ref.current.style.transform = "";
+  }, [reduced]);
 
   useScrollRaf(() => {
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
     const vh = window.innerHeight;

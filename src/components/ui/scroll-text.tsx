@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { clamp, useScrollRaf } from "@/hooks/useScrollRaf";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 interface ScrollTextProps {
   text: string;
@@ -19,8 +20,19 @@ export function ScrollText({ text, className = "", dim = 0.2 }: ScrollTextProps)
   const containerRef = useRef<HTMLSpanElement>(null);
   const wordsRef = useRef<(HTMLSpanElement | null)[]>([]);
   const words = text.split(" ");
+  const reduced = usePrefersReducedMotion();
+
+  // Reduced motion: show every word fully lit, no scroll-driven fill.
+  useEffect(() => {
+    if (reduced) {
+      wordsRef.current.forEach((span) => {
+        if (span) span.style.opacity = "1";
+      });
+    }
+  }, [reduced]);
 
   useScrollRaf(() => {
+    if (reduced) return;
     const el = containerRef.current;
     if (!el) return;
     const vh = window.innerHeight;

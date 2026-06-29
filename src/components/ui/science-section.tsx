@@ -20,7 +20,7 @@ const PILLARS = [
     index: "02",
     title: "Biomineralization",
     description:
-      "A patented, bacteria-driven process that pulls pure CaCO3 from atmospheric CO2.",
+      "A patented, bacteria driven process that pulls pure CaCO3 from atmospheric CO2.",
     image: "/images/lab-bioreactor.jpg",
     alt: "An amber bacterial culture in a laboratory bioreactor",
   },
@@ -28,7 +28,7 @@ const PILLARS = [
     index: "03",
     title: "Carbon capture",
     description:
-      "Every batch sequesters carbon, creating a carbon-negative supply of industrial calcite.",
+      "Every batch sequesters carbon, creating a carbon negative supply of industrial calcite.",
     image: "/images/caco3-microscopy.jpg",
     alt: "Microscopy of precipitated calcium carbonate crystals",
   },
@@ -53,7 +53,7 @@ export function ScienceSection() {
             <Reveal>
               <Parallax>
                 <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl">
-                  <ScrollText text="Turning cave chemistry into an engine of carbon-negative materials." />
+                  <ScrollText text="Turning cave chemistry into an engine of carbon negative materials." />
                 </h2>
               </Parallax>
             </Reveal>

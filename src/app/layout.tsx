@@ -18,10 +18,34 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 });
 
+const SITE_DESCRIPTION =
+  "Hypogenica is a sustainable materials biotech company. We produce pure calcium carbonate from atmospheric CO2 using a bacteria driven, carbon negative process inspired by cave science.";
+
 export const metadata: Metadata = {
-  title: "Hypogenica · Using biotech for a better future",
-  description:
-    "Hypogenica is a sustainable materials biotech company producing high-purity calcium carbonate from atmospheric CO2 with a bacteria-driven, carbon-negative process inspired by cave science.",
+  metadataBase: new URL("https://hypogenica.com"),
+  title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: "Hypogenica",
+    title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
+    description: SITE_DESCRIPTION,
+    url: "https://hypogenica.com",
+    images: [
+      {
+        url: "/images/cave-exploring.jpg",
+        width: 5000,
+        height: 4000,
+        alt: "A caver inside a chamber lined with calcite formations",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
+    description: SITE_DESCRIPTION,
+    images: ["/images/cave-exploring.jpg"],
+  },
 };
 
 export default function RootLayout({
