@@ -1,15 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 
-const TEAM = [
+interface Member {
+  name: string;
+  role: string;
+  /** Drop a portrait at this path to replace the placeholder. */
+  image?: string;
+}
+
+const TEAM: Member[] = [
   { name: "Reilly Blackwell", role: "Founder & CEO" },
   { name: "Dr. Hazel Barton", role: "CTO · Cave Microbiologist" },
-  { name: "Materials Science", role: "Sherwin-Williams alumni" },
-  { name: "Microbiology", role: "University of Alabama" },
 ];
 
 export function TeamSection() {
@@ -36,26 +42,36 @@ export function TeamSection() {
 
             <Reveal delay={120}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-caco3-white/60">
-                Experts in cave, microbiology, and materials sciences, drawn from
-                the University of Alabama and Sherwin-Williams.
+                Led by experts in cave microbiology and materials science, with
+                research roots at the University of Alabama and Sherwin-Williams.
               </p>
             </Reveal>
-          </div>
-        </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-5 md:grid-cols-4">
-          {TEAM.map((member, i) => (
-            <Reveal key={member.name} delay={i * 100} scale>
-              <div>
-                {/* Empty placeholder, awaiting real photography */}
-                <div className="aspect-[4/5] w-full rounded-sm bg-cloud-gray" />
-                <h3 className="mt-4 text-lg font-medium text-caco3-white">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-caco3-white/55">{member.role}</p>
-              </div>
-            </Reveal>
-          ))}
+            <div className="mt-16 grid max-w-xl grid-cols-2 gap-6">
+              {TEAM.map((member, i) => (
+                <Reveal key={member.name} delay={i * 100} scale>
+                  <div>
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-cloud-gray">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          sizes="(min-width: 768px) 280px, 45vw"
+                          quality={90}
+                          className="object-cover"
+                        />
+                      ) : null}
+                    </div>
+                    <h3 className="mt-4 text-lg font-medium text-caco3-white">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-caco3-white/55">{member.role}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
