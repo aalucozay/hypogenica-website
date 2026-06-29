@@ -11,8 +11,8 @@ export function CaveBand() {
       className="relative h-[60vh] min-h-[420px] w-full overflow-hidden bg-hypogenica-green"
     >
       <Image
-        src="/images/cave-rappel.jpg"
-        alt="A caver rappelling into a cavern lined with calcite formations"
+        src="/images/cave-exploring.jpg"
+        alt="A caver seated in a chamber lined with stalactites and flowstone"
         fill
         sizes="100vw"
         quality={90}
