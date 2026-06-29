@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowButton } from "@/components/ui/arrow-button";
+import { FluidParticlesBackground } from "@/components/ui/fluid-particles-background";
 
 export function Hero() {
   return (
@@ -12,7 +13,16 @@ export function Hero() {
         <span className="blob animate-blob-c bottom-[-20%] left-[15%] size-[48vw] bg-future-teal/8" />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-20 pt-44 md:px-12 md:pb-28 md:pt-56">
+      {/* Fluid particle flow-field laced over the gradient */}
+      <div className="pointer-events-none absolute inset-0">
+        <FluidParticlesBackground
+          particleColor="206, 240, 226"
+          opacity={0.16}
+          speed={0.45}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col px-6 pb-20 pt-44 md:px-12 md:pb-28 md:pt-56">
         {/* Headline */}
         <div className="flex-1">
           <h1
