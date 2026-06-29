@@ -49,8 +49,8 @@ const InteractiveHoverButton = React.forwardRef<
         <Arrow />
       </span>
 
-      {/* Dot that expands to fill the button white */}
-      <span className="absolute left-[10%] top-1/2 size-2 -translate-y-1/2 rounded-full bg-caco3-white transition-all duration-300 ease-out-expo group-hover:left-0 group-hover:top-0 group-hover:size-full group-hover:translate-y-0 group-hover:rounded-md" />
+      {/* White fill wipes in from the left — constant rounded corners, no dot */}
+      <span className="absolute inset-0 z-0 rounded-md bg-caco3-white transition-[clip-path] duration-300 ease-out-expo [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)]" />
     </>
   );
 
