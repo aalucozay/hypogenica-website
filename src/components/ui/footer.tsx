@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LinkedInIcon } from "@/components/ui/linkedin-icon";
 
 const LINKS = [
   { label: "About", href: "#about" },
@@ -24,7 +25,7 @@ export function Footer() {
           </span>
         </div>
 
-        <nav className="flex flex-wrap gap-x-8 gap-y-2">
+        <nav className="flex flex-wrap items-center gap-x-8 gap-y-2">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -34,10 +35,19 @@ export function Footer() {
               {link.label}
             </a>
           ))}
+          <a
+            href="https://www.linkedin.com/company/hypogenica/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hypogenica on LinkedIn"
+            className="text-caco3-white/55 transition-colors duration-300 hover:text-future-teal"
+          >
+            <LinkedInIcon className="size-4" />
+          </a>
         </nav>
 
         <p className="text-sm text-caco3-white/40">
-          © 2025 Hypogenica LLC
+          © 2026 Hypogenica LLC
         </p>
       </div>
     </footer>

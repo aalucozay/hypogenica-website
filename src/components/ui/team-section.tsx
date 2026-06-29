@@ -5,12 +5,14 @@ import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
+import { LinkedInIcon } from "@/components/ui/linkedin-icon";
 
 interface Member {
   name: string;
   role: string;
   /** Drop a portrait at this path to replace the placeholder. */
   image?: string;
+  linkedin?: string;
 }
 
 const TEAM: Member[] = [
@@ -18,11 +20,13 @@ const TEAM: Member[] = [
     name: "Reilly Blackwell",
     role: "Founder & CEO",
     image: "/images/reilly-blackwell.png",
+    linkedin: "https://www.linkedin.com/in/reillyblackwell/",
   },
   {
     name: "Dr. Hazel Barton",
     role: "CTO · Cave Microbiologist",
     image: "/images/hazel-barton.png",
+    linkedin: "https://www.linkedin.com/in/hazel-barton-4124148/",
   },
 ];
 
@@ -73,10 +77,27 @@ export function TeamSection() {
                       {/* subtle pulsing accent ring on hover */}
                       <span className="pointer-events-none absolute inset-0 rounded-sm ring-1 ring-inset ring-future-teal/0 transition-colors duration-500 group-hover:ring-future-teal/50 group-hover:animate-pulse" />
                     </div>
-                    <h3 className="mt-4 text-lg font-medium text-caco3-white">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-caco3-white/55">{member.role}</p>
+                    <div className="mt-4 flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-medium text-caco3-white">
+                          {member.name}
+                        </h3>
+                        <p className="text-sm text-caco3-white/55">
+                          {member.role}
+                        </p>
+                      </div>
+                      {member.linkedin ? (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on LinkedIn`}
+                          className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-caco3-white/20 text-caco3-white/70 transition-colors duration-300 hover:border-future-teal hover:bg-future-teal/10 hover:text-future-teal"
+                        >
+                          <LinkedInIcon className="size-4" />
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 </Reveal>
               ))}
