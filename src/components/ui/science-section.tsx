@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
@@ -12,18 +13,24 @@ const PILLARS = [
     title: "Cave science",
     description:
       "Microbial ecosystems from Alabama's caves, directing biomineralization with precision.",
+    image: "/images/cave-pool-research.jpg",
+    alt: "A researcher sampling at a still cave pool among stalactites",
   },
   {
     index: "02",
     title: "Biomineralization",
     description:
       "A patented, bacteria-driven process that pulls pure CaCO3 from atmospheric CO2.",
+    image: "/images/lab-bioreactor.jpg",
+    alt: "An amber bacterial culture in a laboratory bioreactor",
   },
   {
     index: "03",
     title: "Carbon capture",
     description:
       "Every batch sequesters carbon, creating a carbon-negative supply of industrial calcite.",
+    image: "/images/caco3-microscopy.jpg",
+    alt: "Microscopy of precipitated calcium carbonate crystals",
   },
 ];
 
@@ -71,20 +78,29 @@ export function ScienceSection() {
         <div className="mt-24 border-t border-caco3-white/10">
           {PILLARS.map((pillar, i) => (
             <Reveal key={pillar.index} delay={i * 100}>
-              <div className="grid items-start gap-4 border-b border-caco3-white/10 py-10 md:grid-cols-[auto_1fr] md:gap-16 md:py-12">
+              <div className="grid items-center gap-6 border-b border-caco3-white/10 py-10 md:grid-cols-[auto_1fr_clamp(180px,24vw,320px)] md:gap-12 md:py-12">
                 <span
                   aria-hidden="true"
                   className="select-none text-7xl font-bold leading-none tracking-tighter text-caco3-white/15 md:text-[6.5rem]"
                 >
                   {pillar.index}
                 </span>
-                <div className="max-w-2xl md:pt-2">
+                <div className="max-w-2xl">
                   <h3 className="text-2xl font-medium text-caco3-white md:text-3xl">
                     {pillar.title}
                   </h3>
                   <p className="mt-3 text-base leading-relaxed text-caco3-white/60 md:text-lg">
                     {pillar.description}
                   </p>
+                </div>
+                <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm">
+                  <Image
+                    src={pillar.image}
+                    alt={pillar.alt}
+                    fill
+                    sizes="(min-width: 768px) 320px, 100vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </Reveal>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
@@ -27,10 +28,11 @@ export function ImpactSection() {
             </Reveal>
           </div>
 
-          <div>
-            <Reveal>
-              <Parallax>
-                <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl">
+          <div className="grid gap-12 lg:grid-cols-[1fr_clamp(260px,28vw,380px)] lg:items-start lg:gap-16">
+            <div>
+              <Reveal>
+                <Parallax>
+                  <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl">
                   <ScrollText
                     text="Making a cleaner, cost-effective calcium carbonate, for us all."
                     dim={0.18}
@@ -62,6 +64,19 @@ export function ImpactSection() {
                 </Reveal>
               ))}
             </div>
+            </div>
+
+            <Reveal scale>
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                <Image
+                  src="/images/cave-formations.jpg"
+                  alt="A caver examining white mineral formations on a cave wall"
+                  fill
+                  sizes="(min-width: 1024px) 380px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>
