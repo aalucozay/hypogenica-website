@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowButton } from "@/components/ui/arrow-button";
+import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 import { FluidParticlesBackground } from "@/components/ui/fluid-particles-background";
 
 export function Hero() {
@@ -50,9 +50,7 @@ export function Hero() {
             className="animate-fade-up shrink-0"
             style={{ animationDelay: "300ms" }}
           >
-            <ArrowButton href="#science" variant="outline">
-              Discover our science
-            </ArrowButton>
+            <InteractiveHoverButton href="#science" text="Discover our science" />
           </div>
         </div>
       </div>
