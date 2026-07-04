@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
   description: SITE_DESCRIPTION,
   applicationName: "Hypogenica",
+  creator: "Hypogenica",
+  publisher: "Hypogenica",
+  category: "Biotechnology",
   formatDetection: { telephone: false },
   appleWebApp: {
     capable: true,
