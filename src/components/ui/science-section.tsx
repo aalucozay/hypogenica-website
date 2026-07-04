@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
@@ -112,6 +113,8 @@ export function ScienceSection() {
                     fill
                     sizes="(min-width: 768px) 320px, 100vw"
                     quality={90}
+                    placeholder="blur"
+                    blurDataURL={blurData[pillar.image]}
                     className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
                   />
                 </div>
