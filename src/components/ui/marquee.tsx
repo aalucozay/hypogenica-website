@@ -31,7 +31,7 @@ export function Marquee() {
     // Decorative flourish whose text is duplicated for the seamless loop —
     // hidden from assistive tech so the lines aren't announced twice.
     <div aria-hidden="true" className="overflow-hidden bg-hypogenica-green py-14">
-      <div className="flex w-max animate-marquee text-caco3-white/50">
+      <div className="flex w-max animate-marquee text-caco3-white/50 hover:[animation-play-state:paused]">
         <Half />
         <Half />
       </div>
