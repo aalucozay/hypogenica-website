@@ -26,7 +26,7 @@ export function Hero() {
         {/* Headline */}
         <div className="flex-1">
           <h1
-            className="animate-fade-up max-w-[15ch] text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-caco3-white sm:text-8xl lg:text-9xl xl:text-[10.5rem]"
+            className="animate-fade-up max-w-[15ch] text-balance text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-caco3-white sm:text-8xl lg:text-9xl xl:text-[10.5rem]"
             style={{ animationDelay: "0ms" }}
           >
             Using biotech for a better future.
@@ -39,7 +39,7 @@ export function Hero() {
             className="animate-fade-up max-w-xl"
             style={{ animationDelay: "150ms" }}
           >
-            <p className="text-base leading-relaxed text-caco3-white/60 sm:text-lg">
+            <p className="text-pretty text-base leading-relaxed text-caco3-white/60 sm:text-lg">
               We&apos;ve patented a bacteria driven way to make pure calcium
               carbonate that is cleaner, cheaper, and more efficient. How? Using
               cave science.
