@@ -1,19 +1,57 @@
 "use client";
 
+import { useState } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export function ContactSection() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
+  const [status, setStatus] = useState<Status>("idle");
+
+  // Open the visitor's mail client as a zero-backend fallback.
+  const openMailto = (name: string, email: string, message: string) => {
     const body = `From: ${name} (${email})\n\n${message}`;
     window.location.href = `mailto:info@hypogenica.com?subject=${encodeURIComponent(
       `Website inquiry from ${name}`,
     )}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const message = String(data.get("message") || "");
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+        return;
+      }
+
+      // Backend not configured (503) — fall back to the mail client.
+      if (res.status === 503) {
+        openMailto(name, email, message);
+        setStatus("idle");
+        return;
+      }
+
+      setStatus("error");
+    } catch {
+      // Network failure — still give the visitor a way through.
+      openMailto(name, email, message);
+      setStatus("idle");
+    }
   };
 
   const fieldClass =
@@ -125,12 +163,35 @@ export function ContactSection() {
                     className={`${fieldClass} resize-none`}
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="rounded-md bg-caco3-white px-7 py-3 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:opacity-80 active:scale-[0.98]"
-                >
-                  Send message
-                </button>
+                <div className="flex flex-wrap items-center gap-4">
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="rounded-md bg-caco3-white px-7 py-3 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:opacity-80 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {status === "sending" ? "Sending…" : "Send message"}
+                  </button>
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="text-sm text-caco3-white/70"
+                  >
+                    {status === "success" &&
+                      "Thanks — your message is on its way."}
+                    {status === "error" && (
+                      <span className="text-ralf-yellow">
+                        Something went wrong. Please email{" "}
+                        <a
+                          href="mailto:info@hypogenica.com"
+                          className="underline hover:text-future-teal"
+                        >
+                          info@hypogenica.com
+                        </a>
+                        .
+                      </span>
+                    )}
+                  </p>
+                </div>
               </form>
             </Reveal>
           </div>
