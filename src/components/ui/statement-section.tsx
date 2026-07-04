@@ -88,7 +88,7 @@ export function StatementSection() {
           <div className="flex items-center">
             <p
               key={index}
-              className="animate-fade-up max-w-5xl text-3xl font-medium leading-[1.15] tracking-[-0.01em] text-caco3-white sm:text-4xl lg:text-6xl"
+              className="animate-fade-up max-w-5xl text-balance text-3xl font-medium leading-[1.15] tracking-[-0.01em] text-caco3-white sm:text-4xl lg:text-6xl"
               style={{ animationDuration: "600ms" }}
             >
               {words.map((word, i) => (
