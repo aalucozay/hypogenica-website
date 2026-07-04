@@ -89,7 +89,7 @@ export function TeamSection() {
                         <h3 className="text-lg font-medium text-caco3-white">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-caco3-white/55">
+                        <p className="text-pretty text-sm text-caco3-white/55">
                           {member.role}
                         </p>
                       </div>
