@@ -10,6 +10,7 @@ import { ArrowButton } from "@/components/ui/arrow-button";
 const PILLARS = [
   {
     index: "01",
+    label: "Microbiology",
     title: "Cave science",
     description:
       "Microbial ecosystems from Alabama's caves, directing biomineralization with precision.",
@@ -18,6 +19,7 @@ const PILLARS = [
   },
   {
     index: "02",
+    label: "Bioprocess",
     title: "Biomineralization",
     description:
       "A patented, bacteria driven process that pulls pure CaCO3 from atmospheric CO2.",
@@ -26,6 +28,7 @@ const PILLARS = [
   },
   {
     index: "03",
+    label: "Sequestration",
     title: "Carbon capture",
     description:
       "Every batch sequesters carbon, creating a carbon negative supply of industrial calcite.",
@@ -86,7 +89,10 @@ export function ScienceSection() {
                   {pillar.index}
                 </span>
                 <div className="max-w-2xl">
-                  <h3 className="text-2xl font-medium text-caco3-white md:text-3xl">
+                  <span className="block font-mono text-xs uppercase tracking-[0.2em] text-future-teal/80">
+                    {pillar.label}
+                  </span>
+                  <h3 className="mt-3 text-2xl font-medium text-caco3-white md:text-3xl">
                     {pillar.title}
                   </h3>
                   <p className="mt-3 text-base leading-relaxed text-caco3-white/60 md:text-lg">
