@@ -78,7 +78,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
           {LINKS.map((link) => {
             const active = activeId === link.href.slice(1);
             return (
@@ -141,7 +141,7 @@ export function Navbar() {
           menuOpen ? "max-h-80 border-t border-caco3-white/10" : "max-h-0"
         }`}
       >
-        <nav className="flex flex-col px-6 py-2">
+        <nav aria-label="Mobile" className="flex flex-col px-6 py-2">
           {[...LINKS, { label: "Contact", href: "#contact" }].map((link) => (
             <a
               key={link.href}
