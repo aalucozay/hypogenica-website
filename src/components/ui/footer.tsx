@@ -47,7 +47,7 @@ export function Footer() {
         </nav>
 
         <p className="text-sm text-caco3-white/55">
-          © 2026 Hypogenica LLC
+          © {new Date().getFullYear()} Hypogenica LLC
         </p>
       </div>
     </footer>
