@@ -56,13 +56,14 @@ export function NewsSection() {
                 href={article.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded-lg border border-caco3-white/[0.08] bg-card-green p-8 transition-colors duration-300 hover:border-caco3-white/20"
+                className="group flex h-full flex-col rounded-lg border border-caco3-white/[0.08] bg-card-green p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-caco3-white/20"
               >
-                <span className="text-sm text-caco3-white/50">
+                <span className="text-sm text-caco3-white/50 transition-colors duration-300 group-hover:text-future-teal">
                   {article.date}
                 </span>
                 <h3 className="mt-5 text-2xl font-bold leading-snug tracking-[-0.01em] text-caco3-white">
                   {article.title}
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </h3>
                 <p className="mt-4 flex-1 text-base leading-relaxed text-caco3-white/60">
                   {article.snippet}
