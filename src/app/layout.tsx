@@ -75,6 +75,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/cave-exploring.jpg",
+        type: "image/jpeg",
         width: 5000,
         height: 4000,
         alt: "A caver inside a chamber lined with calcite formations",
