@@ -52,7 +52,7 @@ export function TeamSection() {
               <Parallax>
                 <h2
                   id="team-heading"
-                  className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+                  className="max-w-4xl text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
                 >
                   <ScrollText text="Experts in technical applications of cave and materials science." />
                 </h2>
@@ -60,7 +60,7 @@ export function TeamSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-caco3-white/60">
+              <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
                 Led by experts in cave microbiology and materials science, with
                 research roots at the University of Alabama and Sherwin-Williams.
               </p>
