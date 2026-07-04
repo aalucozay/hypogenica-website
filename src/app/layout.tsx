@@ -101,7 +101,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${funnelSans.variable} ${robotoMono.variable} h-full`}
     >
       <body className="min-h-full font-sans antialiased bg-hypogenica-green text-caco3-white">
