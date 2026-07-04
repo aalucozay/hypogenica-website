@@ -69,6 +69,7 @@ export function ContactSection() {
                       id="name"
                       name="name"
                       type="text"
+                      autoComplete="name"
                       required
                       placeholder="Your name"
                       className={fieldClass}
@@ -85,6 +86,7 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       required
                       placeholder="you@example.com"
                       className={fieldClass}
