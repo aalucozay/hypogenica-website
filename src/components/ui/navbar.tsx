@@ -13,12 +13,33 @@ const LINKS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scrollspy: highlight whichever linked section is crossing the middle of
+  // the viewport. rootMargin narrows the "active band" to a horizontal line.
+  useEffect(() => {
+    const ids = LINKS.map((l) => l.href.slice(1)).concat("contact");
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) setActiveId(visible[0].target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -58,17 +79,26 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-9 md:flex">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-base text-caco3-white/70 transition-colors duration-300 hover:text-caco3-white"
-            >
-              <AnimatedUnderline>{link.label}</AnimatedUnderline>
-            </a>
-          ))}
+          {LINKS.map((link) => {
+            const active = activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "true" : undefined}
+                className={`text-base transition-colors duration-300 ${
+                  active
+                    ? "text-caco3-white"
+                    : "text-caco3-white/70 hover:text-caco3-white"
+                }`}
+              >
+                <AnimatedUnderline>{link.label}</AnimatedUnderline>
+              </a>
+            );
+          })}
           <a
             href="#contact"
+            aria-current={activeId === "contact" ? "true" : undefined}
             className="text-base text-caco3-white transition-colors duration-300 hover:text-future-teal"
           >
             <AnimatedUnderline>Contact</AnimatedUnderline>
