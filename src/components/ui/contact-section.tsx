@@ -98,6 +98,9 @@ export function ContactSection() {
                       name="email"
                       type="email"
                       autoComplete="email"
+                      autoCapitalize="none"
+                      autoCorrect="off"
+                      spellCheck={false}
                       required
                       placeholder="you@example.com"
                       className={fieldClass}
