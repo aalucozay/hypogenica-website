@@ -81,7 +81,7 @@ export function ScienceSection() {
               <div className="grid items-center gap-6 border-b border-caco3-white/10 py-10 md:grid-cols-[auto_1fr_clamp(180px,24vw,320px)] md:gap-12 md:py-12">
                 <span
                   aria-hidden="true"
-                  className="select-none text-7xl font-bold leading-none tracking-tighter text-caco3-white/15 md:text-[6.5rem]"
+                  className="select-none font-mono text-6xl font-light tabular-nums leading-none tracking-tight text-caco3-white/20 md:text-8xl"
                 >
                   {pillar.index}
                 </span>
