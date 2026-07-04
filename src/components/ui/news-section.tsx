@@ -75,7 +75,7 @@ export function NewsSection() {
                 <p className="mt-4 flex-1 text-pretty text-base leading-relaxed text-caco3-white/60">
                   {article.snippet}
                 </p>
-                <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-caco3-white">
+                <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-caco3-white transition-colors duration-300 group-hover:text-future-teal">
                   Read more
                   <span className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1">
                     →
