@@ -30,13 +30,20 @@ const ARTICLES = [
 
 export function NewsSection() {
   return (
-    <section id="news" className="bg-hypogenica-green py-32 md:py-48">
+    <section
+      id="news"
+      aria-labelledby="news-heading"
+      className="bg-hypogenica-green py-32 md:py-48"
+    >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         {/* Heading row */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <Reveal>
             <Parallax>
-              <h2 className="text-5xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl">
+              <h2
+                id="news-heading"
+                className="text-5xl font-medium tracking-[-0.02em] sm:text-7xl lg:text-8xl"
+              >
                 Newsroom
               </h2>
             </Parallax>
