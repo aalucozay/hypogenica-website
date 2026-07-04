@@ -75,21 +75,13 @@ export const metadata: Metadata = {
     title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
     description: SITE_DESCRIPTION,
     url: "https://hypogenica.com",
-    images: [
-      {
-        url: "/images/cave-exploring.jpg",
-        type: "image/jpeg",
-        width: 5000,
-        height: 4000,
-        alt: "A caver inside a chamber lined with calcite formations",
-      },
-    ],
+    // og:image is provided by the app/opengraph-image route.
   },
   twitter: {
     card: "summary_large_image",
     title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
     description: SITE_DESCRIPTION,
-    images: ["/images/cave-exploring.jpg"],
+    // twitter:image is provided by the app/twitter-image route.
   },
 };
 
