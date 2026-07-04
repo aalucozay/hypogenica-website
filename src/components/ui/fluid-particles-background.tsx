@@ -136,6 +136,15 @@ export const FluidParticlesBackground = ({
     let width = container.clientWidth;
     let height = container.clientHeight;
 
+    // Floor the field on narrow viewports and low-core devices — 900 arc draws
+    // per frame is fine on a laptop but jankily heavy on a phone. Scale the
+    // count to what the device can comfortably paint (CPU-efficiency pass).
+    const isNarrow = width < 768;
+    const cores = navigator.hardwareConcurrency || 8;
+    const effectiveCount = Math.round(
+      particleCount * (isNarrow ? 0.4 : cores <= 4 ? 0.65 : 1),
+    );
+
     const noise = createNoise();
 
     const sizeCanvas = () => {
@@ -148,7 +157,7 @@ export const FluidParticlesBackground = ({
     };
     sizeCanvas();
 
-    const particles: Particle[] = Array.from({ length: particleCount }, () => ({
+    const particles: Particle[] = Array.from({ length: effectiveCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       size:

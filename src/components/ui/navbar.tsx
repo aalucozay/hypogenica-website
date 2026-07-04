@@ -30,8 +30,19 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6 py-4 md:px-12">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        {/* Logo — scrolls back to the very top without leaving a stray "#" in
+            the URL; honours reduced-motion by skipping the smooth animation. */}
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            const reduce = window.matchMedia(
+              "(prefers-reduced-motion: reduce)",
+            ).matches;
+            window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+          }}
+          className="flex items-center gap-3"
+        >
           <Image
             src="/logo-mark.png"
             alt="Hypogenica logo"
