@@ -50,7 +50,7 @@ export function ContactSection() {
                 <div className="mt-10 space-y-4">
                   <a
                     href="mailto:info@hypogenica.com"
-                    className="block text-2xl font-medium text-caco3-white transition-opacity duration-300 hover:opacity-60 sm:text-3xl"
+                    className="block text-2xl font-medium text-caco3-white transition-colors duration-300 hover:text-future-teal sm:text-3xl"
                   >
                     info@hypogenica.com
                   </a>
