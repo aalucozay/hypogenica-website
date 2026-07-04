@@ -17,6 +17,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Prefer AVIF (falls back to WebP), which is meaningfully smaller than
+    // WebP for the photographic cave imagery on this site.
+    formats: ["image/avif", "image/webp"],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
