@@ -81,10 +81,10 @@ export function ScienceSection() {
         <div className="mt-24 border-t border-caco3-white/10">
           {PILLARS.map((pillar, i) => (
             <Reveal key={pillar.index} delay={i * 100}>
-              <div className="grid items-center gap-6 border-b border-caco3-white/10 py-10 md:grid-cols-[auto_1fr_clamp(180px,24vw,320px)] md:gap-12 md:py-12">
+              <div className="group grid items-center gap-6 border-b border-caco3-white/10 py-10 transition-colors duration-500 ease-out-expo hover:border-future-teal/30 md:grid-cols-[auto_1fr_clamp(180px,24vw,320px)] md:gap-12 md:py-12">
                 <span
                   aria-hidden="true"
-                  className="select-none font-mono text-6xl font-light tabular-nums leading-none tracking-tight text-caco3-white/20 md:text-8xl"
+                  className="select-none font-mono text-6xl font-light tabular-nums leading-none tracking-tight text-caco3-white/20 transition-colors duration-500 ease-out-expo group-hover:text-future-teal/70 md:text-8xl"
                 >
                   {pillar.index}
                 </span>
@@ -106,7 +106,7 @@ export function ScienceSection() {
                     fill
                     sizes="(min-width: 768px) 320px, 100vw"
                     quality={90}
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
                   />
                 </div>
               </div>
