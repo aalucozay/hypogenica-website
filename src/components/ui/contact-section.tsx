@@ -63,7 +63,11 @@ export function ContactSection() {
 
             {/* Form */}
             <Reveal delay={160}>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                aria-label="Contact form"
+                className="space-y-4"
+              >
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label
