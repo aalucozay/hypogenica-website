@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurData } from "@/lib/blur-data";
 
 /**
  * Full-bleed cave photograph used as a dramatic visual break between sections.
@@ -16,6 +17,8 @@ export function CaveBand() {
         fill
         sizes="100vw"
         quality={90}
+        placeholder="blur"
+        blurDataURL={blurData["/images/cave-exploring.jpg"]}
         className="object-cover"
       />
       {/* Blend edges into the adjacent dark sections */}
