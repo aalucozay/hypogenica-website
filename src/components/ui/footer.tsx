@@ -39,7 +39,7 @@ export function Footer() {
             href="https://www.linkedin.com/company/hypogenica/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Hypogenica on LinkedIn"
+            aria-label="Hypogenica on LinkedIn (opens in a new tab)"
             className="text-caco3-white/55 transition-colors duration-300 hover:text-future-teal"
           >
             <LinkedInIcon className="size-4" />
