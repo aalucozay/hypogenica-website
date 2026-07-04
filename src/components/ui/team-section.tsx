@@ -91,7 +91,7 @@ export function TeamSection() {
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${member.name} on LinkedIn`}
+                          aria-label={`${member.name} on LinkedIn (opens in a new tab)`}
                           className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-caco3-white/20 text-caco3-white/70 transition-colors duration-300 hover:border-future-teal hover:bg-future-teal/10 hover:text-future-teal"
                         >
                           <LinkedInIcon className="size-4" />
