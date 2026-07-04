@@ -32,6 +32,12 @@ body {
   line-height: 1.65;
 }
 
+/* Brand-coloured text selection (teal on green) instead of the OS default. */
+::selection {
+  background-color: var(--color-future-teal);
+  color: var(--color-hypogenica-green);
+}
+
 /* Offset anchored sections so the fixed navbar doesn't cover their heading
    when navigation links smooth-scroll to them. */
 section[id] {
