@@ -78,8 +78,9 @@ export function Navbar() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
           onClick={() => setMenuOpen((open) => !open)}
           className="flex flex-col gap-1.5 p-1.5 md:hidden"
         >
@@ -101,8 +102,11 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — `inert` when collapsed so its links stay out of the tab
+          order and are hidden from assistive tech until opened. */}
       <div
+        id="mobile-menu"
+        inert={!menuOpen}
         className={`overflow-hidden bg-hypogenica-green/95 backdrop-blur-md transition-all duration-500 ease-out-expo md:hidden ${
           menuOpen ? "max-h-80 border-t border-caco3-white/10" : "max-h-0"
         }`}
