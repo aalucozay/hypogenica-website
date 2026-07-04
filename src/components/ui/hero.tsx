@@ -5,7 +5,7 @@ import { FluidParticlesBackground } from "@/components/ui/fluid-particles-backgr
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-hypogenica-green">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-hypogenica-green">
       {/* Subtle living background — faint drifting greens within the dark palette */}
       <div className="organic-bg">
         <span className="blob animate-blob-a left-[-10%] top-[-5%] size-[55vw] bg-card-green/80" />
