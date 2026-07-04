@@ -77,7 +77,10 @@ export function NewsSection() {
                 </p>
                 <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-caco3-white transition-colors duration-300 group-hover:text-future-teal">
                   Read more
-                  <span className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1">
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform duration-300 ease-out-expo group-hover:translate-x-1"
+                  >
                     →
                   </span>
                 </span>
