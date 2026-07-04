@@ -16,6 +16,7 @@ export function ImpactSection() {
   return (
     <section
       id="impact"
+      aria-labelledby="impact-heading"
       className="bg-caco3-white py-32 text-hypogenica-green md:py-48"
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
@@ -32,7 +33,10 @@ export function ImpactSection() {
             <div>
               <Reveal>
                 <Parallax>
-                  <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl">
+                  <h2
+                    id="impact-heading"
+                    className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl"
+                  >
                   <ScrollText
                     text="Making a cleaner, cost effective calcium carbonate, for us all."
                     dim={0.18}
