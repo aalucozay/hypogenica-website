@@ -67,6 +67,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_US",
     siteName: "Hypogenica",
     title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
     description: SITE_DESCRIPTION,
