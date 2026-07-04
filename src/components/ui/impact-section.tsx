@@ -61,7 +61,7 @@ export function ImpactSection() {
                     <p className="text-2xl font-medium tracking-[-0.01em] md:text-3xl">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-sm text-hypogenica-green/60">
+                    <p className="mt-2 text-pretty text-sm text-hypogenica-green/60">
                       {stat.label}
                     </p>
                   </div>
