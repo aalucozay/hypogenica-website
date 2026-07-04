@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
@@ -78,6 +79,8 @@ export function ImpactSection() {
                   fill
                   sizes="(min-width: 1024px) 380px, 100vw"
                   quality={90}
+                  placeholder="blur"
+                  blurDataURL={blurData["/images/cave-formations.jpg"]}
                   className="object-cover"
                 />
               </div>
