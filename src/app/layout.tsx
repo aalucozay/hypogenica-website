@@ -21,10 +21,33 @@ const robotoMono = Roboto_Mono({
 const SITE_DESCRIPTION =
   "Hypogenica is a sustainable materials biotech company. We produce pure calcium carbonate from atmospheric CO2 using a bacteria driven, carbon negative process inspired by cave science.";
 
+// Organization structured data so search engines can surface the company name,
+// logo, and location as a rich result.
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Hypogenica",
+  url: "https://hypogenica.com",
+  logo: "https://hypogenica.com/logo.png",
+  description: SITE_DESCRIPTION,
+  email: "info@hypogenica.com",
+  foundingDate: "2020-08",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Tuscaloosa",
+    addressRegion: "AL",
+    addressCountry: "US",
+  },
+  sameAs: ["https://www.linkedin.com/company/hypogenica/"],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://hypogenica.com"),
   title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
   description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "Hypogenica",
@@ -65,6 +88,12 @@ export default function RootLayout({
       className={`${funnelSans.variable} ${robotoMono.variable} h-full`}
     >
       <body className="min-h-full font-sans antialiased bg-hypogenica-green text-caco3-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ORGANIZATION_JSON_LD),
+          }}
+        />
         {children}
       </body>
     </html>
