@@ -45,6 +45,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hypogenica.com"),
   title: "Hypogenica | Sustainable Calcium Carbonate Through Cave Science",
   description: SITE_DESCRIPTION,
+  applicationName: "Hypogenica",
+  appleWebApp: {
+    capable: true,
+    title: "Hypogenica",
+    statusBarStyle: "black-translucent",
+  },
   alternates: {
     canonical: "/",
   },
