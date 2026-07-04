@@ -17,7 +17,7 @@ export function ContactSection() {
   };
 
   const fieldClass =
-    "w-full rounded-md border border-caco3-white/15 bg-caco3-white/5 px-4 py-3 text-caco3-white placeholder-caco3-white/50 outline-none transition-colors duration-300 focus:border-future-teal";
+    "w-full rounded-md border border-caco3-white/15 bg-caco3-white/5 px-4 py-3 text-caco3-white caret-future-teal placeholder-caco3-white/50 outline-none transition-colors duration-300 focus:border-future-teal";
 
   return (
     <section
