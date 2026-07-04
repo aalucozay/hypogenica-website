@@ -32,7 +32,11 @@ const TEAM: Member[] = [
 
 export function TeamSection() {
   return (
-    <section id="about" className="bg-hypogenica-green py-32 md:py-48">
+    <section
+      id="about"
+      aria-labelledby="team-heading"
+      className="bg-hypogenica-green py-32 md:py-48"
+    >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
@@ -46,7 +50,10 @@ export function TeamSection() {
           <div>
             <Reveal>
               <Parallax>
-                <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl">
+                <h2
+                  id="team-heading"
+                  className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+                >
                   <ScrollText text="Experts in technical applications of cave and materials science." />
                 </h2>
               </Parallax>
