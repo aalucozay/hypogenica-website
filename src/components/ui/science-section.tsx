@@ -60,7 +60,7 @@ export function ScienceSection() {
               <Parallax>
                 <h2
                   id="science-heading"
-                  className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+                  className="max-w-4xl text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
                 >
                   <ScrollText text="Turning cave chemistry into an engine of carbon negative materials." />
                 </h2>
@@ -68,7 +68,7 @@ export function ScienceSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-caco3-white/60">
+              <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
                 We combine microbiology, geology, and materials science to
                 produce calcium carbonate the way nature does, at industrial
                 scale.
