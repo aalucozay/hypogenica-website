@@ -81,6 +81,7 @@ export function ContactSection() {
                       name="name"
                       type="text"
                       autoComplete="name"
+                      autoCapitalize="words"
                       required
                       placeholder="Your name"
                       className={fieldClass}
