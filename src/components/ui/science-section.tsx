@@ -39,7 +39,10 @@ const PILLARS = [
 
 export function ScienceSection() {
   return (
-    <section className="relative bg-hypogenica-green py-32 md:py-48">
+    <section
+      aria-labelledby="science-heading"
+      className="relative bg-hypogenica-green py-32 md:py-48"
+    >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           {/* Left rail eyebrow */}
@@ -55,7 +58,10 @@ export function ScienceSection() {
           <div>
             <Reveal>
               <Parallax>
-                <h2 className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl">
+                <h2
+                  id="science-heading"
+                  className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+                >
                   <ScrollText text="Turning cave chemistry into an engine of carbon negative materials." />
                 </h2>
               </Parallax>
