@@ -32,7 +32,7 @@ const InteractiveHoverButton = React.forwardRef<
   InteractiveHoverButtonProps
 >(({ text = "Button", href, className, ...props }, ref) => {
   const classes = cn(
-    "group relative inline-flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap rounded-md border border-caco3-white/60 bg-transparent px-6 py-3.5 text-center text-base font-medium text-caco3-white",
+    "group relative inline-flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap rounded-md border border-caco3-white/60 bg-transparent px-6 py-3.5 text-center text-base font-medium text-caco3-white transition-transform duration-300 ease-out-expo active:scale-[0.98]",
     className,
   );
 
