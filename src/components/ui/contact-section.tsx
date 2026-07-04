@@ -119,6 +119,7 @@ export function ContactSection() {
                     id="message"
                     name="message"
                     rows={5}
+                    autoCapitalize="sentences"
                     required
                     placeholder="How can we help?"
                     className={`${fieldClass} resize-none`}
