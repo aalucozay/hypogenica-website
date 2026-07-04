@@ -20,7 +20,11 @@ export function ContactSection() {
     "w-full rounded-md border border-caco3-white/15 bg-caco3-white/5 px-4 py-3 text-caco3-white placeholder-caco3-white/50 outline-none transition-colors duration-300 focus:border-future-teal";
 
   return (
-    <section id="contact" className="bg-hypogenica-green py-32 md:py-48">
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="bg-hypogenica-green py-32 md:py-48"
+    >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-[280px_1fr]">
           <div>
@@ -35,7 +39,10 @@ export function ContactSection() {
             {/* Info */}
             <div>
               <Reveal>
-                <h2 className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl">
+                <h2
+                  id="contact-heading"
+                  className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl"
+                >
                   Get in touch
                 </h2>
               </Reveal>
