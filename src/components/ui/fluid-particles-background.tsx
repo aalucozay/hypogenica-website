@@ -236,7 +236,6 @@ export const FluidParticlesBackground = ({
     // Depend on the primitive min/max rather than the `particleSize` object —
     // its default is a fresh literal each render, which would otherwise tear
     // down and rebuild the whole canvas on every parent re-render.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [particleCount, noiseIntensity, particleSize.min, particleSize.max, particleColor, opacity, trailFade, speed]);
 
   return (
