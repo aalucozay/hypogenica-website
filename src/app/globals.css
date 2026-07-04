@@ -38,6 +38,15 @@ section[id] {
   scroll-margin-top: 5rem;
 }
 
+/* Visible keyboard focus indicator. Only shows for keyboard navigation
+   (:focus-visible), so mouse clicks stay clean. Teal ring reads on both the
+   dark-green and white sections. */
+:focus-visible {
+  outline: 2px solid var(--color-future-teal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* ---------------------------------------------------------------------------
    Marquee — two identical copies in the track; translate -50% loops seamlessly
    --------------------------------------------------------------------------- */
