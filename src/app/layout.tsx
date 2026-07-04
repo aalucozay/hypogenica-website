@@ -88,6 +88,12 @@ export default function RootLayout({
       className={`${funnelSans.variable} ${robotoMono.variable} h-full`}
     >
       <body className="min-h-full font-sans antialiased bg-hypogenica-green text-caco3-white">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-caco3-white focus:px-4 focus:py-2 focus:text-hypogenica-green focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
