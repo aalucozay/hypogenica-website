@@ -72,7 +72,7 @@ export function NewsSection() {
                   {article.title}
                   <span className="sr-only"> (opens in a new tab)</span>
                 </h3>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-caco3-white/60">
+                <p className="mt-4 flex-1 text-pretty text-base leading-relaxed text-caco3-white/60">
                   {article.snippet}
                 </p>
                 <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-caco3-white">
