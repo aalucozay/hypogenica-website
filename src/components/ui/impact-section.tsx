@@ -35,7 +35,7 @@ export function ImpactSection() {
                 <Parallax>
                   <h2
                     id="impact-heading"
-                    className="max-w-4xl text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl"
+                    className="max-w-4xl text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] text-hypogenica-green sm:text-5xl lg:text-6xl"
                   >
                   <ScrollText
                     text="Making a cleaner, cost effective calcium carbonate, for us all."
@@ -46,7 +46,7 @@ export function ImpactSection() {
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-8 max-w-2xl text-lg font-normal leading-relaxed text-hypogenica-green/80">
+              <p className="mt-8 max-w-2xl text-pretty text-lg font-normal leading-relaxed text-hypogenica-green/80">
                 It&apos;s not just millions of dollars saved. It&apos;s also
                 preserving the future of our earth and its natural habitats. As
                 scientists and cavers, we&apos;re invested in a world where
