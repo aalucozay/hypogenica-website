@@ -50,7 +50,11 @@ export function Hero() {
             className="animate-fade-up shrink-0"
             style={{ animationDelay: "300ms" }}
           >
-            <InteractiveHoverButton href="#science" text="Discover our science" />
+            <InteractiveHoverButton
+              href="#science"
+              text="Discover our science"
+              className="w-full sm:w-auto"
+            />
           </div>
         </div>
       </div>
