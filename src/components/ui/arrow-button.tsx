@@ -45,7 +45,7 @@ export function ArrowButton({
       <a
         href={href}
         {...linkProps}
-        className={`group inline-flex items-center gap-2.5 rounded-md border border-caco3-white/60 px-6 py-3.5 text-base font-medium text-caco3-white transition-colors duration-300 ease-out-expo hover:bg-caco3-white hover:text-hypogenica-green ${className}`}
+        className={`group inline-flex items-center gap-2.5 rounded-md border border-caco3-white/60 px-6 py-3.5 text-base font-medium text-caco3-white transition-all duration-300 ease-out-expo hover:bg-caco3-white hover:text-hypogenica-green active:scale-[0.98] ${className}`}
       >
         {children}
         {Arrow}
@@ -58,7 +58,7 @@ export function ArrowButton({
       <a
         href={href}
         {...linkProps}
-        className={`group inline-flex items-center gap-2.5 rounded-md bg-future-teal px-6 py-3.5 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:brightness-105 ${className}`}
+        className={`group inline-flex items-center gap-2.5 rounded-md bg-future-teal px-6 py-3.5 text-base font-medium text-hypogenica-green transition-all duration-300 ease-out-expo hover:brightness-105 active:scale-[0.98] ${className}`}
       >
         {children}
         {Arrow}
