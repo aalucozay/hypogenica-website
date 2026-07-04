@@ -12,7 +12,7 @@ export function CaveBand() {
     >
       <Image
         src="/images/cave-exploring.jpg"
-        alt="A caver seated in a chamber lined with stalactites and flowstone"
+        alt=""
         fill
         sizes="100vw"
         quality={90}
