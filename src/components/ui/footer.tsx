@@ -25,7 +25,7 @@ export function Footer() {
           </span>
         </div>
 
-        <nav className="flex flex-wrap items-center gap-x-8 gap-y-2">
+        <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-8 gap-y-2">
           {LINKS.map((link) => (
             <a
               key={link.href}
