@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Funnel_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -46,6 +46,12 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/images/cave-exploring.jpg"],
   },
+};
+
+// Tint the mobile browser chrome (address/status bar) to match the dark-green
+// background instead of the default white, so it blends with the page.
+export const viewport: Viewport = {
+  themeColor: "#0d2818",
 };
 
 export default function RootLayout({
