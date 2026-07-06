@@ -51,7 +51,7 @@ export default function OpengraphImage() {
               fontWeight: 700,
               lineHeight: 1.02,
               letterSpacing: "-0.03em",
-              color: "#fcdb48",
+              color: "#ffffff",
               maxWidth: 900,
             }}
           >
