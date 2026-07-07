@@ -64,7 +64,7 @@ export default function OpengraphImage() {
               letterSpacing: "0.04em",
             }}
           >
-            Carbon-negative calcium carbonate · Tuscaloosa, Alabama
+            From CO₂, by cave bacteria · Tuscaloosa, Alabama
           </div>
         </div>
       </div>
