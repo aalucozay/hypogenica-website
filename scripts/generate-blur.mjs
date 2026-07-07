@@ -15,6 +15,7 @@ const FILES = [
   "cave-pool-research.jpg",
   "lab-bioreactor.jpg",
   "caco3-microscopy.jpg",
+  "cave-rappel.jpg",
 ];
 
 const map = {};
