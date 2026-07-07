@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 
@@ -64,6 +65,19 @@ export function ContactSection() {
                     Tuscaloosa, Alabama
                   </p>
                 </div>
+              </Reveal>
+
+              {/* Subtle brand mark fills the space beneath the contact details
+                  so the column balances against the taller form. */}
+              <Reveal delay={200}>
+                <Image
+                  src="/logo-mark.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={220}
+                  height={220}
+                  className="mt-16 hidden h-40 w-40 opacity-20 lg:block"
+                />
               </Reveal>
             </div>
 
