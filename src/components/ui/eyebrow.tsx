@@ -11,7 +11,7 @@ export function Eyebrow({ children, className = "" }: EyebrowProps) {
   // Inherits the surrounding text colour and simply dims it, so it reads
   // correctly on both dark green and light sections.
   return (
-    <span className={`block text-sm font-medium opacity-55 ${className}`}>
+    <span className={`block text-base font-medium opacity-55 sm:text-lg ${className}`}>
       {children}
     </span>
   );
