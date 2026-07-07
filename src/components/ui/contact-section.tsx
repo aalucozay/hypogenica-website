@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
 import { Eyebrow } from "@/components/ui/eyebrow";
 
@@ -32,54 +33,49 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       className="bg-hypogenica-green py-32 md:py-48"
     >
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <div className="grid gap-12 md:grid-cols-[280px_1fr]">
-          <div>
+      {/* Centered, narrower layout (mirrors the ABL contact form) so the
+          details and form sit together rather than flung to opposite edges. */}
+      <div className="mx-auto max-w-6xl px-6 md:px-12">
+        <div className="grid gap-12 md:grid-cols-2 md:items-start md:gap-16">
+          {/* Left — heading, details, and a supporting cave photo */}
+          <div className="flex flex-col gap-8">
             <Reveal>
-              <div className="md:sticky md:top-32">
-                <Eyebrow>Contact</Eyebrow>
+              <Eyebrow>Contact</Eyebrow>
+              <h2
+                id="contact-heading"
+                className="mt-4 text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl"
+              >
+                Get in touch
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="space-y-4">
+                <a
+                  href="mailto:info@hypogenica.com"
+                  className="block text-2xl font-medium text-caco3-white transition-colors duration-300 hover:text-future-teal sm:text-3xl"
+                >
+                  info@hypogenica.com
+                </a>
+                <p className="text-lg text-caco3-white/60">
+                  Tuscaloosa, Alabama
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={200} scale>
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-md">
+                <Image
+                  src="/images/cave-rappel.jpg"
+                  alt="A caver rappelling into a limestone cave"
+                  fill
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                  quality={90}
+                  placeholder="blur"
+                  blurDataURL={blurData["/images/cave-rappel.jpg"]}
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>
-
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* Info */}
-            <div>
-              <Reveal>
-                <h2
-                  id="contact-heading"
-                  className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl"
-                >
-                  Get in touch
-                </h2>
-              </Reveal>
-              <Reveal delay={100}>
-                <div className="mt-10 space-y-4">
-                  <a
-                    href="mailto:info@hypogenica.com"
-                    className="block text-2xl font-medium text-caco3-white transition-colors duration-300 hover:text-future-teal sm:text-3xl"
-                  >
-                    info@hypogenica.com
-                  </a>
-                  <p className="text-lg text-caco3-white/60">
-                    Tuscaloosa, Alabama
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* Subtle brand mark fills the space beneath the contact details
-                  so the column balances against the taller form. */}
-              <Reveal delay={200}>
-                <Image
-                  src="/logo-mark.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={220}
-                  height={220}
-                  className="mt-16 hidden h-40 w-40 opacity-20 lg:block"
-                />
-              </Reveal>
-            </div>
 
             {/* Form */}
             <Reveal delay={160}>
@@ -173,7 +169,6 @@ export function ContactSection() {
                 </div>
               </form>
             </Reveal>
-          </div>
         </div>
       </div>
     </section>
