@@ -55,7 +55,7 @@ export default function OpengraphImage() {
               maxWidth: 900,
             }}
           >
-            Using biotech for a better future.
+            Pure calcium carbonate, made carbon-negative.
           </div>
           <div
             style={{
