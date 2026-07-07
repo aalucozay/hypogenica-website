@@ -49,7 +49,7 @@ export function Footer() {
         <p className="text-sm text-caco3-white/55">
           © {new Date().getFullYear()} Hypogenica LLC
           <span className="mx-1.5 text-caco3-white/35">|</span>
-          Site by{" "}
+          Built by{" "}
           <a
             href="#"
             className="text-caco3-white/55 no-underline transition-colors duration-300 hover:text-caco3-white/80 hover:underline"
