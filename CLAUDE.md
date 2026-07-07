@@ -81,7 +81,7 @@ Geometric hexagonal prism referencing the CaCO3 crystal structure and a tilted "
 2. **Hero** — full viewport, Hypogenica Green background, H1 in Ralf Yellow "Using biotech for a better future.", white subtext, CTA button, fade-up entrance
 3. **Science Section** — numbered cards (01, 02, 03): Cave Science, Biomineralization, Carbon Capture. Placeholder image areas. Short descriptions.
 4. **Marquee** — infinite horizontal scroll CSS animation, repeating "Carbon-negative CaCO3 — Cleaner. Cheaper. Efficient." with separator dots
-5. **Team Section** — heading about experts in cave/materials science, University of Alabama and Sherwin-Williams mentioned, placeholder for team cards
+5. **Team Section** — heading about experts in cave/materials science, University of Alabama mentioned, placeholder for team cards
 6. **Impact Section** — environmental and economic value, carbon-negative, preserving habitats
 7. **News Section** — 3 cards: NSF STTR Award (2024), HudsonAlpha Accelerator (Dec 2025), Culverhouse First Prize (2024). Date, title, snippet, link.
 8. **Contact Section** — info@hypogenica.com, Tuscaloosa AL

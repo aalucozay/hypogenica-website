@@ -62,7 +62,7 @@ export function TeamSection() {
             <Reveal delay={120}>
               <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
                 Led by experts in cave microbiology and materials science, with
-                research roots at the University of Alabama and Sherwin-Williams.
+                research roots at the University of Alabama.
               </p>
             </Reveal>
 
