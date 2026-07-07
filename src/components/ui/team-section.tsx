@@ -28,6 +28,12 @@ const TEAM: Member[] = [
     image: "/images/hazel-barton.png",
     linkedin: "https://www.linkedin.com/in/hazel-barton-4124148/",
   },
+  {
+    name: "George Breley",
+    role: "Co-Founder",
+    // Drop a headshot at /images/george-breley.png to replace the placeholder.
+    linkedin: "https://www.linkedin.com/in/george-breley-a1b715210/",
+  },
 ];
 
 export function TeamSection() {
@@ -66,7 +72,7 @@ export function TeamSection() {
               </p>
             </Reveal>
 
-            <div className="mt-16 grid max-w-2xl grid-cols-2 gap-10 sm:gap-16">
+            <div className="mt-16 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-12">
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={i * 100} scale>
                   <div className="group">
