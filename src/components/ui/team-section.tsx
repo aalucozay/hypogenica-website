@@ -68,7 +68,7 @@ export function TeamSection() {
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={i * 100} scale>
                   <div className="group">
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[radial-gradient(120%_85%_at_50%_12%,#ffffff,#dae6e5_78%)] shadow-[0_0_0_rgba(11,221,153,0)] transition-all duration-500 ease-out-expo group-hover:-translate-y-3 group-hover:shadow-[0_28px_60px_-12px_rgba(11,221,153,0.55)]">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[radial-gradient(120%_85%_at_50%_12%,#e3f4ea,#c2e2d1_78%)] shadow-[0_0_0_rgba(11,221,153,0)] transition-all duration-500 ease-out-expo group-hover:-translate-y-3 group-hover:shadow-[0_28px_60px_-12px_rgba(11,221,153,0.55)]">
                       {member.image ? (
                         <Image
                           src={member.image}
