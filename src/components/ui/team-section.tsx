@@ -30,7 +30,7 @@ const TEAM: Member[] = [
   {
     name: "George Breley",
     role: "Co-Founder",
-    // Drop a headshot at /images/george-breley.png to replace the placeholder.
+    image: "/images/george-breley.png",
     linkedin: "https://www.linkedin.com/in/george-breley-a1b715210/",
   },
 ];
