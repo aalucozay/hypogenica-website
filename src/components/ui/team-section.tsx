@@ -11,8 +11,6 @@ interface Member {
   role: string;
   /** Drop a portrait at this path to replace the placeholder. */
   image?: string;
-  /** Horizontal/vertical framing of the portrait; defaults to top-centre. */
-  objectPosition?: string;
   linkedin?: string;
 }
 
@@ -24,17 +22,16 @@ const TEAM: Member[] = [
     linkedin: "https://www.linkedin.com/in/reillyblackwell/",
   },
   {
+    name: "George Breley",
+    role: "Co-Founder",
+    image: "/images/george-breley.png",
+    linkedin: "https://www.linkedin.com/in/george-breley-a1b715210/",
+  },
+  {
     name: "Dr. Hazel Barton",
     role: "CTO · Cave Microbiologist",
     image: "/images/hazel-barton.png",
     linkedin: "https://www.linkedin.com/in/hazel-barton-4124148/",
-  },
-  {
-    name: "George Breley",
-    role: "Co-Founder",
-    image: "/images/george-breley.png",
-    objectPosition: "35% 0%",
-    linkedin: "https://www.linkedin.com/in/george-breley-a1b715210/",
   },
 ];
 
@@ -79,8 +76,7 @@ export function TeamSection() {
                           fill
                           sizes="(min-width: 768px) 280px, 45vw"
                           quality={90}
-                          style={{ objectPosition: member.objectPosition ?? "50% 0%" }}
-                          className="object-cover grayscale transition-all duration-700 ease-out-expo group-hover:scale-[1.05] group-hover:grayscale-0"
+                          className="object-cover object-top grayscale transition-all duration-700 ease-out-expo group-hover:scale-[1.05] group-hover:grayscale-0"
                         />
                       ) : null}
                       {/* subtle pulsing accent ring on hover */}
