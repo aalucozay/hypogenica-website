@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 
@@ -21,16 +20,7 @@ export function ImpactSection() {
       className="bg-caco3-white py-32 text-hypogenica-green md:py-48"
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <div className="grid gap-12 md:grid-cols-[280px_1fr]">
-          <div>
-            <Reveal>
-              <div className="md:sticky md:top-32">
-                <Eyebrow>The value</Eyebrow>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="grid gap-12 lg:grid-cols-[1fr_clamp(260px,28vw,380px)] lg:items-start lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[1fr_clamp(260px,28vw,380px)] lg:items-start lg:gap-16">
             <div>
               <Reveal>
                 <Parallax>
@@ -86,7 +76,6 @@ export function ImpactSection() {
               </div>
             </Reveal>
           </div>
-        </div>
       </div>
     </section>
   );

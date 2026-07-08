@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import { clamp, useScrollRaf } from "@/hooks/useScrollRaf";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-import { Eyebrow } from "@/components/ui/eyebrow";
 
 const STATEMENTS = [
   "We explore microbial ecosystems deep within Alabama's 9,000+ caves, where bacteria have precipitated minerals in the dark for millennia.",
@@ -65,9 +64,8 @@ export function StatementSection() {
         </div>
 
         <div className="relative mx-auto grid w-full max-w-[1600px] gap-12 px-6 md:grid-cols-[280px_1fr] md:px-12">
-          {/* Left rail */}
+          {/* Left rail — progress counter + bar */}
           <div className="flex flex-col gap-8">
-            <Eyebrow>Our approach</Eyebrow>
             <div className="text-sm text-caco3-white/50">
               <span ref={counterRef} className="text-caco3-white">
                 01

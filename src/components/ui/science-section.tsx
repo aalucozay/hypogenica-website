@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 import { ArrowButton } from "@/components/ui/arrow-button";
@@ -45,43 +44,31 @@ export function ScienceSection() {
       className="relative bg-hypogenica-green py-32 md:py-48"
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <div className="grid gap-12 md:grid-cols-[280px_1fr]">
-          {/* Left rail eyebrow */}
-          <div>
-            <Reveal>
-              <div className="md:sticky md:top-32">
-                <Eyebrow>The platform</Eyebrow>
-              </div>
-            </Reveal>
-          </div>
+        {/* Centered section header */}
+        <div className="mx-auto max-w-4xl text-center">
+          <Reveal>
+            <Parallax>
+              <h2
+                id="science-heading"
+                className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+              >
+                <ScrollText text="Turning cave chemistry into an engine of carbon negative materials." />
+              </h2>
+            </Parallax>
+          </Reveal>
 
-          {/* Heading + body */}
-          <div>
-            <Reveal>
-              <Parallax>
-                <h2
-                  id="science-heading"
-                  className="max-w-4xl text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
-                >
-                  <ScrollText text="Turning cave chemistry into an engine of carbon negative materials." />
-                </h2>
-              </Parallax>
-            </Reveal>
+          <Reveal delay={120}>
+            <p className="mx-auto mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
+              We combine microbiology, geology, and materials science to produce
+              calcium carbonate the way nature does, at industrial scale.
+            </p>
+          </Reveal>
 
-            <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
-                We combine microbiology, geology, and materials science to
-                produce calcium carbonate the way nature does, at industrial
-                scale.
-              </p>
-            </Reveal>
-
-            <Reveal delay={200}>
-              <div className="mt-10">
-                <ArrowButton href="#about">Meet the team</ArrowButton>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={200}>
+            <div className="mt-10 flex justify-center">
+              <ArrowButton href="#about">Meet the team</ArrowButton>
+            </div>
+          </Reveal>
         </div>
 
         {/* Editorial list — large faint numbers, dividing lines between items */}

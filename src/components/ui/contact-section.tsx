@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
-import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function ContactSection() {
   const [opened, setOpened] = useState(false);
@@ -40,10 +39,9 @@ export function ContactSection() {
           {/* Left — heading, details, and a supporting cave photo */}
           <div className="flex flex-col gap-8">
             <Reveal>
-              <Eyebrow>Contact</Eyebrow>
               <h2
                 id="contact-heading"
-                className="mt-4 text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl"
+                className="text-4xl font-medium tracking-[-0.02em] text-caco3-white sm:text-6xl"
               >
                 Get in touch
               </h2>

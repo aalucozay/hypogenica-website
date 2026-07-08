@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 import { LinkedInIcon } from "@/components/ui/linkedin-icon";
@@ -44,35 +43,28 @@ export function TeamSection() {
       className="bg-hypogenica-green py-32 md:py-48"
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <div className="grid gap-12 md:grid-cols-[280px_1fr]">
-          <div>
-            <Reveal>
-              <div className="md:sticky md:top-32">
-                <Eyebrow>The team</Eyebrow>
-              </div>
-            </Reveal>
-          </div>
+        {/* Centered section header */}
+        <div className="mx-auto max-w-4xl text-center">
+          <Reveal>
+            <Parallax>
+              <h2
+                id="team-heading"
+                className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
+              >
+                <ScrollText text="Experts in technical applications of cave and materials science." />
+              </h2>
+            </Parallax>
+          </Reveal>
 
-          <div>
-            <Reveal>
-              <Parallax>
-                <h2
-                  id="team-heading"
-                  className="max-w-4xl text-balance text-3xl font-medium leading-[1.1] tracking-[-0.01em] sm:text-5xl lg:text-6xl"
-                >
-                  <ScrollText text="Experts in technical applications of cave and materials science." />
-                </h2>
-              </Parallax>
-            </Reveal>
+          <Reveal delay={120}>
+            <p className="mx-auto mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
+              Led by experts in cave microbiology and materials science, with
+              research roots at the University of Alabama.
+            </p>
+          </Reveal>
+        </div>
 
-            <Reveal delay={120}>
-              <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-caco3-white/60">
-                Led by experts in cave microbiology and materials science, with
-                research roots at the University of Alabama.
-              </p>
-            </Reveal>
-
-            <div className="mt-16 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-12">
+        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-12">
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={i * 100} scale>
                   <div className="group">
@@ -114,8 +106,6 @@ export function TeamSection() {
                   </div>
                 </Reveal>
               ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
