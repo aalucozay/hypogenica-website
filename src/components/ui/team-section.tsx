@@ -76,7 +76,7 @@ export function TeamSection() {
                           fill
                           sizes="(min-width: 768px) 280px, 45vw"
                           quality={90}
-                          className="object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.05]"
+                          className="object-cover object-top grayscale transition-all duration-700 ease-out-expo group-hover:scale-[1.05] group-hover:grayscale-0"
                         />
                       ) : null}
                       {/* subtle pulsing accent ring on hover */}
