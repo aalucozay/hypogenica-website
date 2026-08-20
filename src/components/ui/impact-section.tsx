@@ -6,10 +6,44 @@ import { Reveal } from "@/components/ui/reveal";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 
+// Minimal line-art icons (inherit currentColor). One per stat: a leaf for
+// carbon-negative, a coin for cost saved, a hexagon (the CaCO3 crystal, echoing
+// the logo) for purity.
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.5,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
+const LeafIcon = () => (
+  <svg {...iconProps} className="size-7">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+    <path d="M2 21c0-3 1.85-5.36 5.08-6" />
+  </svg>
+);
+
+const CoinIcon = () => (
+  <svg {...iconProps} className="size-7">
+    <circle cx="12" cy="12" r="9.5" />
+    <path d="M15.5 8.5h-4.75a2 2 0 0 0 0 4h2.5a2 2 0 0 1 0 4H8.5" />
+    <path d="M12 17.5V6.5" />
+  </svg>
+);
+
+const HexIcon = () => (
+  <svg {...iconProps} className="size-7">
+    <path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z" />
+  </svg>
+);
+
 const STATS = [
-  { value: "Carbon negative", label: "Every gram sequesters CO2" },
-  { value: "Millions saved", label: "Lower cost production at scale" },
-  { value: "Pure CaCO3", label: "Industrial grade calcite" },
+  { value: "Carbon negative", label: "Every gram sequesters CO2", Icon: LeafIcon },
+  { value: "Millions saved", label: "Lower cost production at scale", Icon: CoinIcon },
+  { value: "Pure CaCO3", label: "Industrial grade calcite", Icon: HexIcon },
 ];
 
 export function ImpactSection() {
@@ -49,7 +83,8 @@ export function ImpactSection() {
               {STATS.map((stat, i) => (
                 <Reveal key={stat.value} delay={i * 100}>
                   <div className="border-t border-hypogenica-green/15 pt-6">
-                    <p className="text-2xl font-medium tracking-[-0.01em] md:text-3xl">
+                    <stat.Icon />
+                    <p className="mt-4 text-2xl font-medium tracking-[-0.01em] md:text-3xl">
                       {stat.value}
                     </p>
                     <p className="mt-2 text-pretty text-sm text-hypogenica-green/60">
