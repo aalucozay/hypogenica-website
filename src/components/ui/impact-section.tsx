@@ -83,8 +83,10 @@ export function ImpactSection() {
               {STATS.map((stat, i) => (
                 <Reveal key={stat.value} delay={i * 100}>
                   <div className="border-t border-hypogenica-green/15 pt-6">
-                    <stat.Icon />
-                    <p className="mt-4 text-2xl font-medium tracking-[-0.01em] md:text-3xl">
+                    <span className="inline-flex size-12 items-center justify-center rounded-lg bg-hypogenica-green text-future-teal">
+                      <stat.Icon />
+                    </span>
+                    <p className="mt-5 text-2xl font-medium tracking-[-0.01em] md:text-3xl">
                       {stat.value}
                     </p>
                     <p className="mt-2 text-pretty text-sm text-hypogenica-green/60">
