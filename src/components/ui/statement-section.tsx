@@ -5,10 +5,27 @@ import { clamp, useScrollRaf } from "@/hooks/useScrollRaf";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 const STATEMENTS = [
-  "We explore microbial ecosystems deep within Alabama's 9,000+ caves, where bacteria have precipitated minerals in the dark for millennia.",
-  "Our patented, bacteria driven process pulls calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.",
-  "Every gram of CaCO3 we make sequesters carbon. The process is carbon negative, turning a greenhouse gas into industrial grade material.",
+  { text: "We explore microbial ecosystems deep within Alabama's 9,000+ caves, where bacteria have precipitated minerals in the dark for millennia.", highlight: "" },
+  { text: "Our patented, bacteria driven process pulls calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.", highlight: "" },
+  { text: "Every gram of CaCO3 we make sequesters carbon. The process is carbon negative, turning a greenhouse gas into industrial grade material.", highlight: "carbon negative" },
 ];
+
+// Word indices in `words` that make up the `highlight` phrase (matched as a
+// contiguous run, punctuation-insensitive) so only that phrase gets coloured —
+// e.g. the second "carbon", not the first in "sequesters carbon".
+function highlightIndices(words: string[], highlight: string): Set<number> {
+  const set = new Set<number>();
+  if (!highlight) return set;
+  const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const target = highlight.split(" ").map(norm);
+  for (let i = 0; i + target.length <= words.length; i++) {
+    if (target.every((t, j) => norm(words[i + j]) === t)) {
+      target.forEach((_, j) => set.add(i + j));
+      break;
+    }
+  }
+  return set;
+}
 
 export function StatementSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -49,7 +66,8 @@ export function StatementSection() {
     });
   });
 
-  const words = STATEMENTS[index].split(" ");
+  const words = STATEMENTS[index].text.split(" ");
+  const hi = highlightIndices(words, STATEMENTS[index].highlight);
 
   return (
     <section
@@ -95,6 +113,7 @@ export function StatementSection() {
                   ref={(el) => {
                     wordsRef.current[i] = el;
                   }}
+                  className={hi.has(i) ? "text-future-teal" : undefined}
                   style={{
                     opacity: reduced ? 1 : 0.16,
                     transition: "opacity 120ms linear",
