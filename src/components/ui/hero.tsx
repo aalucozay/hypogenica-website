@@ -29,7 +29,8 @@ export function Hero() {
             className="animate-fade-up max-w-[18ch] text-balance text-6xl font-bold leading-[0.92] tracking-[-0.04em] text-caco3-white sm:text-8xl lg:text-9xl xl:text-[10.5rem]"
             style={{ animationDelay: "0ms" }}
           >
-            Pure calcium carbonate, made carbon-negative.
+            Pure calcium carbonate, made{" "}
+            <span className="text-future-teal">carbon negative</span>.
           </h1>
         </div>
 
