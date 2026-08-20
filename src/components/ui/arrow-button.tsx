@@ -73,7 +73,7 @@ export function ArrowButton({
       className={`group inline-flex items-center gap-2.5 text-base font-medium text-caco3-white transition-colors duration-300 hover:text-future-teal ${className}`}
     >
       {children}
-      {Arrow}
+      <span className="text-future-teal">{Arrow}</span>
     </a>
   );
 }
