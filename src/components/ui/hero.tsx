@@ -40,7 +40,7 @@ export function Hero() {
             className="animate-fade-up max-w-xl"
             style={{ animationDelay: "150ms" }}
           >
-            <p className="text-pretty text-base leading-relaxed text-caco3-white/60 sm:text-lg">
+            <p className="text-pretty text-lg leading-relaxed text-caco3-white/70 sm:text-xl">
               Our biotechnology leverages a novel bacterial metabolism to make
               pure calcium carbonate that is cleaner, cheaper, and more
               efficient. How? Using cave science.
