@@ -41,9 +41,9 @@ export function Hero() {
             style={{ animationDelay: "150ms" }}
           >
             <p className="text-pretty text-base leading-relaxed text-caco3-white/60 sm:text-lg">
-              We&apos;ve patented a bacteria driven way to make pure calcium
-              carbonate that is cleaner, cheaper, and more efficient. How? Using
-              cave science.
+              Our biotechnology leverages a novel bacterial metabolism to make
+              pure calcium carbonate that is cleaner, cheaper, and more
+              efficient. How? Using cave science.
             </p>
           </div>
 
