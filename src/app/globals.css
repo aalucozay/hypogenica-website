@@ -17,7 +17,7 @@
   --color-ralf-yellow: #fcdb48;
 
   --font-sans: var(--font-funnel-sans);
-  --font-mono: var(--font-roboto-mono);
+  --font-mono: var(--font-spline-sans-mono);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }

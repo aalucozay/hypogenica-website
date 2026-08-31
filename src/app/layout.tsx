@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Funnel_Sans, Roboto_Mono } from "next/font/google";
+import { Funnel_Sans, Spline_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
 const funnelSans = Funnel_Sans({
@@ -9,12 +9,13 @@ const funnelSans = Funnel_Sans({
   display: "swap",
 });
 
-// Monospace for eyebrow labels, nav, counters and buttons — the "lab" detail
-// that gives the layout its technical, editorial feel.
-const robotoMono = Roboto_Mono({
+// Monospace for eyebrow labels, counters and data — the "lab" detail that
+// gives the layout its technical, editorial feel. Deliberately not Roboto Mono
+// or JetBrains Mono: those are the defaults every generated site reaches for.
+const splineSansMono = Spline_Sans_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-roboto-mono",
+  weight: ["300", "400", "500"],
+  variable: "--font-spline-sans-mono",
   display: "swap",
 });
 
@@ -99,7 +100,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-US"
-      className={`${funnelSans.variable} ${robotoMono.variable} h-full`}
+      className={`${funnelSans.variable} ${splineSansMono.variable} h-full`}
     >
       <body className="min-h-full font-sans antialiased bg-hypogenica-green text-caco3-white">
         <a
