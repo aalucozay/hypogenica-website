@@ -23,7 +23,7 @@ const PILLARS = [
     label: "Bioprocess",
     title: "Biomineralization",
     description:
-      "A patented, bacteria driven process that pulls pure CaCO3 from atmospheric CO2.",
+      "A patented, bacterial process that manufactures pure CaCO3 from atmospheric CO2.",
     image: "/images/lab-bioreactor.jpg",
     alt: "An amber bacterial culture in a laboratory bioreactor",
   },
