@@ -100,7 +100,11 @@ export function Navbar() {
           <a
             href="#contact"
             aria-current={activeId === "contact" ? "true" : undefined}
-            className="text-base text-caco3-white transition-colors duration-300 hover:text-future-teal"
+            className={`text-base transition-colors duration-300 ${
+              activeId === "contact"
+                ? "text-caco3-white"
+                : "text-caco3-white/70 hover:text-caco3-white"
+            }`}
           >
             <AnimatedUnderline>Contact</AnimatedUnderline>
           </a>
