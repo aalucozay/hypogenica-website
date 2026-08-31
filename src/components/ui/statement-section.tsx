@@ -7,7 +7,7 @@ import { chem } from "@/lib/chem";
 
 const STATEMENTS = [
   { text: "We explore microbial ecosystems deep within Alabama's 4,000+ caves, where bacteria have precipitated minerals in the dark for millennia.", highlight: "" },
-  { text: "Our patented, bacteria driven process pulls calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.", highlight: "" },
+  { text: "Our bacterial process manufactures calcium carbonate from atmospheric CO2, replicating millions of years of cave chemistry in days.", highlight: "" },
   { text: "Every gram of CaCO3 we make sequesters carbon. The process is carbon negative, turning a greenhouse gas into industrial grade material.", highlight: "carbon negative" },
 ];
 

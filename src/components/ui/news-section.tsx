@@ -5,8 +5,18 @@ import { Parallax } from "@/components/ui/parallax";
 import { ArrowButton } from "@/components/ui/arrow-button";
 import { chem } from "@/lib/chem";
 
+/**
+ * Every milestone lives here, tagged by kind. Patents and licences belong in
+ * this list as their own entries rather than as claims in the body copy — add
+ * one per patent once its number and issue date are confirmed:
+ *
+ *   { kind: "Patent", date: "<month year issued>", title: "<patent title>",
+ *     snippet: "US <number>. <one line on what it covers>.",
+ *     href: "https://patents.google.com/patent/<number>" },
+ */
 const ARTICLES = [
   {
+    kind: "Award",
     date: "July 2025",
     title: "NSF STTR Phase I Award",
     snippet:
@@ -14,6 +24,7 @@ const ARTICLES = [
     href: "https://seedfund.nsf.gov/awardees/phase-1/details/?company=hypogenica-llc",
   },
   {
+    kind: "Program",
     date: "December 2025",
     title: "HudsonAlpha AgTech Accelerator",
     snippet:
@@ -21,6 +32,7 @@ const ARTICLES = [
     href: "https://www.hudsonalpha.org/hudsonalpha-and-gener8tor-kick-off-sixth-agtech-accelerator-cohort-with-10-startups/",
   },
   {
+    kind: "Award",
     date: "2024",
     title: "Culverhouse Competition First Prize",
     snippet:
@@ -66,9 +78,14 @@ export function NewsSection() {
                 rel="noopener noreferrer"
                 className="group flex h-full flex-col rounded-lg border border-caco3-white/[0.08] bg-card-green p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-caco3-white/20"
               >
-                <span className="text-sm text-caco3-white/50 transition-colors duration-300 group-hover:text-future-teal">
-                  {article.date}
-                </span>
+                <div className="flex items-baseline gap-3">
+                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-future-teal/80">
+                    {article.kind}
+                  </span>
+                  <span className="text-sm text-caco3-white/50 transition-colors duration-300 group-hover:text-caco3-white/70">
+                    {article.date}
+                  </span>
+                </div>
                 <h3 className="mt-5 text-2xl font-bold leading-snug tracking-[-0.01em] text-caco3-white">
                   {article.title}
                   <span className="sr-only"> (opens in a new tab)</span>
