@@ -2,6 +2,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { Hero } from "@/components/ui/hero";
 import { StatementSection } from "@/components/ui/statement-section";
 import { ScienceSection } from "@/components/ui/science-section";
+import { RoutesSection } from "@/components/ui/routes-section";
 import { Marquee } from "@/components/ui/marquee";
 import { CaveBand } from "@/components/ui/cave-band";
 import { TeamSection } from "@/components/ui/team-section";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <StatementSection />
         <ScienceSection />
+        <RoutesSection />
         <Marquee />
         <CaveBand />
         <TeamSection />
