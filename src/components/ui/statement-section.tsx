@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { clamp, useScrollRaf } from "@/hooks/useScrollRaf";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { chem } from "@/lib/chem";
 
 const STATEMENTS = [
   { text: "We explore microbial ecosystems deep within Alabama's 4,000+ caves, where bacteria have precipitated minerals in the dark for millennia.", highlight: "" },
@@ -119,7 +120,7 @@ export function StatementSection() {
                     transition: "opacity 120ms linear",
                   }}
                 >
-                  {word}
+                  {chem(word)}
                   {i < words.length - 1 ? " " : ""}
                 </span>
               ))}

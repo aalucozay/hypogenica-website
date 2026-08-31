@@ -5,6 +5,7 @@ import { blurData } from "@/lib/blur-data";
 import { Reveal } from "@/components/ui/reveal";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
+import { chem } from "@/lib/chem";
 
 // Minimal line-art icons (inherit currentColor). One per stat: a leaf for
 // carbon-negative, a coin for cost saved, a hexagon (the CaCO3 crystal, echoing
@@ -87,10 +88,10 @@ export function ImpactSection() {
                       <stat.Icon />
                     </span>
                     <p className="mt-5 text-2xl font-medium tracking-[-0.01em] md:text-3xl">
-                      {stat.value}
+                      {chem(stat.value)}
                     </p>
                     <p className="mt-2 text-pretty text-sm text-hypogenica-green/60">
-                      {stat.label}
+                      {chem(stat.label)}
                     </p>
                   </div>
                 </Reveal>

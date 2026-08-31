@@ -6,6 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Parallax } from "@/components/ui/parallax";
 import { ScrollText } from "@/components/ui/scroll-text";
 import { ArrowButton } from "@/components/ui/arrow-button";
+import { chem } from "@/lib/chem";
 
 const PILLARS = [
   {
@@ -90,7 +91,7 @@ export function ScienceSection() {
                     {pillar.title}
                   </h3>
                   <p className="mt-3 text-pretty text-base leading-relaxed text-caco3-white/60 md:text-lg">
-                    {pillar.description}
+                    {chem(pillar.description)}
                   </p>
                 </div>
                 <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm">
