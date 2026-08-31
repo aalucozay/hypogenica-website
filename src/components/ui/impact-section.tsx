@@ -74,9 +74,9 @@ export function ImpactSection() {
             <Reveal delay={120}>
               <p className="mt-8 max-w-2xl text-pretty text-lg font-normal leading-relaxed text-hypogenica-green/80">
                 It&apos;s not just millions of dollars saved. It&apos;s also
-                preserving the future of our earth and its natural habitats. As
-                scientists and cavers, we&apos;re invested in a world where
-                industry and environment work together.
+                preserving the future of our planet and its critical
+                ecosystems. As scientists and cavers, we&apos;re invested in a
+                world where industry and environment work together.
               </p>
             </Reveal>
 
