@@ -7,6 +7,7 @@ import { AnimatedUnderline } from "@/components/ui/animated-underline";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Science", href: "#science" },
+  { label: "Markets", href: "#markets" },
   { label: "News", href: "#news" },
 ];
 
