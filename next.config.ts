@@ -13,6 +13,13 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=()",
   },
+  // Stops other sites framing this one and blocks plugin and base-tag
+  // injection. Restricting scripts would need per-request nonces and would
+  // make every page dynamic.
+  {
+    key: "Content-Security-Policy",
+    value: "frame-ancestors 'self'; base-uri 'self'; object-src 'none'",
+  },
 ];
 
 const nextConfig: NextConfig = {
