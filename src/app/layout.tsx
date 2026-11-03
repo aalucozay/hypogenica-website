@@ -20,7 +20,7 @@ const splineSansMono = Spline_Sans_Mono({
 });
 
 const SITE_DESCRIPTION =
-  "Hypogenica is a sustainable materials biotech company. We produce pure calcium carbonate from atmospheric CO2 using a bacteria driven, carbon negative process inspired by cave science.";
+  "Hypogenica is a sustainable materials company making pure calcium carbonate from atmospheric CO2, using a carbon negative process inspired by cave science.";
 
 // Organization structured data so search engines can surface the company name,
 // logo, and location as a rich result.
