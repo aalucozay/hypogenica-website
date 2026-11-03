@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // Search Console ownership, held by the Astoria Design account. The DNS
+  // record verifies whoever set the site up; this lets the studio see it too.
+  verification: { google: "S8hkBIwSLCZG8gjYiNlMCoVYCJ4trE8udYFEN-3zO04" },
   robots: {
     index: true,
     follow: true,
